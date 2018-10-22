@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 *********************
 Setting Date and Time
 *********************
 
+=======
+>>>>>>> 8515539eae88b0367762aa3f5f4cbabb4017f9d3
 Setting the time zone, monitoring date and time requires root
 privileges; use ``sudo``.
 

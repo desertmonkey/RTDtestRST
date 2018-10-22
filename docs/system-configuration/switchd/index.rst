@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 *******
 switchd
 *******
 
 
+=======
+>>>>>>> 8515539eae88b0367762aa3f5f4cbabb4017f9d3
 ``switchd`` is the daemon at the heart of Cumulus Linux. It communicates
 between the switch and Cumulus Linux, and all the applications running
 on Cumulus Linux.

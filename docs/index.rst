@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .. RTD Test Project documentation master file, created by
    sphinx-quickstart on Mon Oct 22 15:43:38 2018.
    You can adapt this file completely to your liking, but it should at least
@@ -20,6 +21,8 @@ Welcome to RTD Test Project's documentation!
    system-configuration/setting-date-and-time/index
 
 
+=======
+>>>>>>> 8515539eae88b0367762aa3f5f4cbabb4017f9d3
 Cumulus Linux is the first full-featured Linux operating system for the
 networking industry. The `Debian
 Jessie <https://www.debian.org/releases/jessie/>`__-based,

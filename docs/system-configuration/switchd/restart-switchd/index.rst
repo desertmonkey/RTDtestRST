@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 ***************
 Restart switchd
 ***************
+=======
+Restart switchd
+---------------
+>>>>>>> 8515539eae88b0367762aa3f5f4cbabb4017f9d3
 
 Whenever you modify any ``switchd`` hardware configuration file
 (typically changing any ``*.conf`` file that requires making a change to
