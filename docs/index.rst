@@ -2,6 +2,10 @@
    sphinx-quickstart on Mon Oct 22 15:43:38 2018.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
+   
+*************
+RTD Test Docs
+*************
 
 Welcome to RTD Test Project's documentation!
 ============================================
@@ -13,7 +17,6 @@ Welcome to RTD Test Project's documentation!
    quick-start-guide/index
    system-configuration/network-command-line-utility-nclu/index
    system-configuration/switchd/index
-   system-configuration/switchd/restart-switchd/index
    system-configuration/setting-date-and-time/index
 
 
