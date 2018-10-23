@@ -297,20 +297,12 @@ Configure User Accounts
 You can configure user accounts in Cumulus Linux with read-only or edit
 permissions for NCLU:
 
--  You create user accounts with **read-only** permissions for NCLU by
-   adding them to the ``netshow`` group. A user in
-   the ``netshow`` group can run NCLU ``net show`` commands, such
-   as ``net show interface`` or ``net show config``, and certain
-   general Linux commands, such as ``ls``, ``cd`` or  ``man``, but
-   cannot run ``net add``, ``net del`` or  ``net commit`` commands.
--  You create user accounts with **edit** permissions for NCLU by
-   adding them to the ``netedit`` group. A user in
-   the ``netedit`` group can run NCLU configuration commands,
-   such ``net add``, ``net del`` or ``net commit`` in addition to
-   NCLU ``net show`` commands.
+-  You create user accounts with **read-only** permissions for NCLU by 
+   adding them to the *netshow* group. A user in the netshow group can run NCLU ``net show`` commands, such as ``net show interface`` or ``net show config``, and certain general Linux commands, such as ``ls``, ``cd`` or ``man``, but cannot run ``net add``, ``net del`` or ``net commit`` commands. 
+-  You create user accounts with **edit** permissions for NCLU by adding them to the ``netedit`` group. A user in the ``netedit`` group can run NCLU configuration commands, such ``net add``, ``net del`` or ``net commit`` in addition to NCLU ``net show`` commands.
 
 The examples below demonstrate how to add a new user account or modify
-an existing user account called \ *myuser*.
+an existing user account called *myuser*.
 
 To add a new user account with NCLU show permissions:
 
