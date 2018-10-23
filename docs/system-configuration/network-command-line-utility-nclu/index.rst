@@ -46,7 +46,7 @@ package on your switch:
     cumulus@switch:~$ sudo -E apt-get install nclu
     cumulus@switch:~$ sudo -E apt-get upgrade
 
-.. note:: The  ``nclu`` package installs a new bash completion script and displays the following message:
+.. note:: The ``nclu`` package installs a new bash completion script and displays the following message:
    ::  
        Setting up nclu (1.0-cl3u3) ... 
        To enable the newly installed bash completion for nclu in this shell, execute... 
@@ -64,17 +64,12 @@ with NCLU:
 #. Use ``net commit`` and ``net abort`` to commit and delete staged
    changes.  
 
-.. note:: ``net commit`` applies the changes to the relevant configuration
-files, such as ``/etc/network/interfaces``, then runs necessary follow
-on commands to enable the configuration, such as ``ifreload -a``. If
-two different users try to commit a change at the same time, NCLU
-displays a warning but implements the change according to the first
-commit received. The second user will need to abort the commit.
+.. note:: ``net commit`` applies the changes to the relevant configuration files, such as ``/etc/network/interfaces``, then runs necessary follow on commands to enable the configuration, such as ``ifreload -a``. If two different users try to commit a change at the same time, NCLU displays a warning but implements the change according to the first commit received. The second user will need to abort the commit.
 
 When you have a running configuration, you can review and update the
 configuration with the following commands:
 
--  ``net show is`` series of commands for viewing various parts of the
+-  ``net show`` is a series of commands for viewing various parts of the
    network configuration. For example, use ``net show configuration``
    to view the complete network configuration,
    ``net show commit history`` to view a history of commits using
@@ -202,14 +197,13 @@ NCLU has a comprehensive built in help system. In addition to the net man page, 
 Add ? (Question Mark) Ability to NCLU
 -------------------------------------
 
-While tab completion is enabled by default, you can also configure NCLU to use the **?** (question mark character) to look at available commands. To enable this feature for the _cumulus_ user, open the following file:
-
+While tab completion is enabled by default, you can also configure NCLU to use the **?** (question mark character) to look at available commands. To enable this feature for the *cumulus* user, open the following file:
 
 ::
 
     cumulus@leaf01:~$ sudo nano ~/.inputrc
 
-Uncomment the very last line in the `.inputrc` file so that the file changes from this:
+Uncomment the very last line in the ``.inputrc`` file so that the file changes from this:
 
 ::  
 
