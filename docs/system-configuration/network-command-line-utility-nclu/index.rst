@@ -22,14 +22,13 @@ and sub-modes. NCLU:
 .. figure:: ../../images/Linux-NCLU-Architecture-2.png
    :alt: NCLU overview
 
-The NCLU wrapper utility called \ ``net`` is capable of configuring
+The NCLU wrapper utility called ``net`` is capable of configuring
 layer 2 and layer 3 features of the networking stack, installing ACLs
 and VXLANs, rolling back and deleting snapshots, as well as providing
 monitoring and troubleshooting functionality for these features. You can
-configure both
-the \ ``/etc/network/interfaces`` and ``/etc/frr/frr.conf`` files
-with \ ``net``, in addition to running show and clear commands related
-to \ ``ifupdown2`` and FRRouting.
+configure both the ``/etc/network/interfaces`` and ``/etc/frr/frr.conf`` files
+with ``net``, in addition to running show and clear commands related
+to ``ifupdown2`` and FRRouting.
 
 .. contents:: Contents
    :depth: 2
@@ -47,8 +46,7 @@ package on your switch:
     cumulus@switch:~$ sudo -E apt-get install nclu
     cumulus@switch:~$ sudo -E apt-get upgrade
 
-.. note:: The  ``nclu`` package installs a new bash completion script and
-displays the following message:
+.. note:: The  ``nclu`` package installs a new bash completion script and displays the following message:
    ::  
        Setting up nclu (1.0-cl3u3) ... 
        To enable the newly installed bash completion for nclu in this shell, execute... 
@@ -60,15 +58,15 @@ NCLU Basics
 Use the following workflow to stage and commit changes to Cumulus Linux
 with NCLU:
 
-1. Use the \ ``net add`` and \ ``net del`` commands to stage and remove
+#. Use the ``net add`` and ``net del`` commands to stage and remove
    configuration changes.
-2. Use the \ ``net pending`` command to review staged changes.
-3. Use \ ``net commit`` and \ ``net abort`` to commit and delete staged
+#. Use the ``net pending`` command to review staged changes.
+#. Use ``net commit`` and ``net abort`` to commit and delete staged
    changes.  
 
 .. note:: ``net commit`` applies the changes to the relevant configuration
 files, such as ``/etc/network/interfaces``, then runs necessary follow
-on commands to enable the configuration, such as ``ifreload -a``. ! If
+on commands to enable the configuration, such as ``ifreload -a``. If
 two different users try to commit a change at the same time, NCLU
 displays a warning but implements the change according to the first
 commit received. The second user will need to abort the commit.
@@ -77,9 +75,9 @@ When you have a running configuration, you can review and update the
 configuration with the following commands:
 
 -  ``net show is`` series of commands for viewing various parts of the
-   network configuration. For example, use \ ``net show configuration``
+   network configuration. For example, use ``net show configuration``
    to view the complete network configuration,
-   ``net show commit history``\ to view a history of commits using
+   ``net show commit history`` to view a history of commits using
    NCLU, and ``net show bgp`` to view BGP status.
 -  ``net clear`` provides a way to clear ``net show`` counters, BGP and
    OSPF neighbor content, and more.
@@ -97,8 +95,7 @@ configuration with the following commands:
 -  ``net del all`` deletes all configurations and stops the IEEE 802.1X
    service.
 
-.. note:: This command does not remove configurations, as NCLU does not interact
-with eth0 interfaces and management VRF.
+.. note:: This command does not remove configurations, as NCLU does not interact with eth0 interfaces and management VRF.
 
 Tab Completion, Verification, and Inline Help
 ---------------------------------------------
@@ -127,9 +124,7 @@ commands:
     Did you mean one of the following?
         net add interface <interface> mtu <552-9216>
 
-NCLU has a comprehensive built in help system. In addition to the net
-man page, you can use \ ``?`` and \ ``help`` to display available
-commands:
+NCLU has a comprehensive built in help system. In addition to the net man page, you can use ``?`` and ``help`` to display available commands:
 
 ::
 
@@ -194,15 +189,15 @@ commands:
         net show bgp (<ipv4>|<ipv4/prefixlen>) [bestpath|multipath] [json]
         net show bgp (<ipv6>|<ipv6/prefixlen>) [bestpath|multipath] [json]
         net show bgp vrf <text> (<ipv4>|<ipv4/prefixlen>) [bestpath|multipath] [json]
-     ```
+
      
-    [plugin:content-inject](../switchd/restart-switchd)
+[plugin:content-inject](../switchd/restart-switchd)
      
 
-    .. note::  You can configure multiple interfaces at once:
-       ::
+.. note::  You can configure multiple interfaces at once:
+    ::
        
-           cumulus@switch:~$ net add int swp7-9,12,15-17,22 mtu 9216
+     cumulus@switch:~$ net add int swp7-9,12,15-17,22 mtu 9216
 
 Add ? (Question Mark) Ability to NCLU
 -------------------------------------
@@ -245,15 +240,12 @@ will work on all subsequent sessions on the switch.
         rollback  :  revert to a previous configuration state
         show      :  show command output
 
-.. note:: When the question mark is typed, NCLU autocompletes and shows all
-available options, but the question mark does not actually appear on the
-terminal. This is normal, expected behavior.
+.. note:: When the question mark is typed, NCLU autocompletes and shows all available options, but the question mark does not actually appear on the terminal. This is normal, expected behavior.
 
 Built-In Examples
 -----------------
 
-NCLU has a number of built in examples to guide users through basic
-configuration setup:
+NCLU has a number of built in examples to guide users through basic configuration setup:
 
 ::
 
@@ -324,17 +316,17 @@ Configure User Accounts
 You can configure user accounts in Cumulus Linux with read-only or edit
 permissions for NCLU:
 
--  You create user accounts with \ **read-only** permissions for NCLU by
-   adding them to the \ ``netshow`` group. A user in
-   the \ ``netshow`` group can run NCLU \ ``net show`` commands, such
-   as \ ``net show interface`` or ``net show config``, and certain
-   general Linux commands, such as \ ``ls``, \ ``cd`` or  ``man``, but
-   cannot run \ ``net add``, \ ``net del`` or  ``net commit`` commands.
--  You create user accounts with \ **edit** permissions for NCLU by
-   adding them to the \ ``netedit`` group. A user in
-   the \ ``netedit`` group can run NCLU configuration commands,
-   such \ ``net add``, \ ``net del`` or ``net commit`` in addition to
-   NCLU \ ``net show`` commands.
+-  You create user accounts with **read-only** permissions for NCLU by
+   adding them to the ``netshow`` group. A user in
+   the ``netshow`` group can run NCLU ``net show`` commands, such
+   as ``net show interface`` or ``net show config``, and certain
+   general Linux commands, such as ``ls``, ``cd`` or  ``man``, but
+   cannot run ``net add``, ``net del`` or  ``net commit`` commands.
+-  You create user accounts with **edit** permissions for NCLU by
+   adding them to the ``netedit`` group. A user in
+   the ``netedit`` group can run NCLU configuration commands,
+   such ``net add``, ``net del`` or ``net commit`` in addition to
+   NCLU ``net show`` commands.
 
 The examples below demonstrate how to add a new user account or modify
 an existing user account called \ *myuser*.
@@ -373,18 +365,18 @@ To add NCLU edit permissions to a user account that already exists:
     Adding user myuser to group netedit
     Done
 
-! You can use the ``adduser`` command for local user accounts only. You
-can use the ``addgroup`` command for both local and remote user
-accounts. For a remote user account, you must use the mapping username,
-such as ``tacacs3`` or ``radius_user``, not the or account name.
+.. note:: You can use the ``adduser`` command for local user accounts only. You
+   can use the ``addgroup`` command for both local and remote user
+   accounts. For a remote user account, you must use the mapping username,
+   such as ``tacacs3`` or ``radius_user``, not the or account name.
 
-If the user tries to run commands that are not allowed, the following
-error displays:
+   If the user tries to run commands that are not allowed, the following
+   error displays:
 
-::
+   ::
 
-    myuser@switch:~$ net add hostname host01
-    ERROR: User username does not have permission to make networking changes.
+       myuser@switch:~$ net add hostname host01
+       ERROR: User username does not have permission to make networking changes.
 
 Edit the netd.conf File
 =======================
@@ -418,7 +410,7 @@ To configure a new user group to use NCLU, add that group to the
 ``groups_with_edit`` and ``groups_with_show`` lines in the file.
 
 !! Use caution giving edit permissions to groups. For example, don't
-give edit permissions to the \ *tacacs* group.
+give edit permissions to the *tacacs* group.
 
 Restart the netd Service
 ========================
@@ -434,7 +426,7 @@ Back Up the Configuration to a Single File
 ==========================================
 
 You can easily back up your NCLU configuration to a file by outputting
-the results of \ ``net show configuration commands`` to a file, then
+the results of ``net show configuration commands`` to a file, then
 retrieving the contents of the file using the ``source`` command. You
 can then view the configuration at any time or copy it to other switches
 and use the ``source`` command to apply that configuration to those
@@ -460,7 +452,7 @@ Advanced Configuration
 
 NCLU needs no initial configuration; it is ready to go in Cumulus Linux.
 However, if you need to modify its configuration, you must manually
-update the \ ``/etc/netd.conf`` file. You can configure this file to
+update the ``/etc/netd.conf`` file. You can configure this file to
 allow different permission levels for users to edit configurations and
 run ``show`` commands. It also contains a blacklist that hides less
 frequently used terms from the tabbed autocomplete. 
@@ -577,5 +569,5 @@ frequently used terms from the tabbed autocomplete. 
 +----------------------------+--------------------+----------------+
 
 .. tip:: ``net`` provides an environment variable to set where the ``net``
-output is directed. To only use ``stdout``, set the ``NCLU_TAB_STDOUT``
-environment variable to *true*. The value is not case sensitive.
+   output is directed. To only use ``stdout``, set the ``NCLU_TAB_STDOUT``
+   environment variable to *true*. The value is not case sensitive.
