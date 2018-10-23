@@ -1,10 +1,7 @@
-<<<<<<< HEAD
 *****************
 Quick Start Guide
 *****************
 
-=======
->>>>>>> 8515539eae88b0367762aa3f5f4cbabb4017f9d3
 This quick start guide provides an end-to-end setup process for
 installing and running Cumulus Linux, as well as a collection of example
 commands for getting started after installation is complete.
