@@ -132,7 +132,7 @@ html_theme = 'default'
 html_static_path = ['_static']
 
 def setup(app):
-    app.add_stylesheet('css/custom.css')
+    app.add_stylesheet('css/cumulus.css')
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
