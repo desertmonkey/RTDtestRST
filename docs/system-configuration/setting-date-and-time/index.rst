@@ -609,8 +609,7 @@ mistake and rerun the three commands above to verify.
 Related Information
 ===================
 
--  `Debian System Administrator’s Manual –
-      Time <http://www.debian.org/doc/manuals/system-administrator/ch-sysadmin-time.html>`__
+-  `Debian System Administrator’s Manual - Time <http://www.debian.org/doc/manuals/system-administrator/ch-sysadmin-time.html>`__
 -  `www.ntp.org <http://www.ntp.org>`__
 -  `en.wikipedia.org/wiki/Network\_Time\_Protocol <http://en.wikipedia.org/wiki/Network_Time_Protocol>`__
 -  `wiki.debian.org/NTP <http://wiki.debian.org/NTP>`__
