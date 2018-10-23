@@ -2,5 +2,21 @@
 
 
 .highlight { 
-	background: #eaedf2;
+	background: #EAEDF2;
+}
+
+pre {
+    padding: 1rem;
+    margin: 2rem 0;
+    background: #EAEDF2;
+    border: 1px solid #b5bdc9;
+    border-radius: 2px;
+    line-height: 1.15;
+    font-size: 1rem;
+}
+
+pre code {
+    color: #515D68;
+    background: inherit;
+    font-size: 1rem;
 }
