@@ -9,13 +9,11 @@ on Cumulus Linux.
 The ``switchd`` configuration is stored in
 ``/etc/cumulus/switchd.conf``.
 
-Contents
---------
-
-[TOC]
-
+.. contents:: Contents
+   :depth: 2
+   
 The switchd File System
------------------------
+=======================
 
 ``switchd`` also exports a file system, mounted on ``/cumulus/switchd``,
 that presents all the ``switchd`` configuration options as a series of
@@ -90,7 +88,7 @@ is for a switch with one switch port configured:
     `-- version
 
 Configure switchd Parameters
-----------------------------
+============================
 
 You can use ``cl-cfg`` to configure many \ ``switchd`` parameters at
 runtime (like ACLs, interfaces, and route table utilization), which
@@ -121,7 +119,7 @@ To verify that the value changed, use ``grep``:
     buf_util.poll_interval = 0
     buf_util.measure_interval = 1
 
-! You can get some of this information by running ``cl-resource-query``;
+.. note:: You can get some of this information by running ``cl-resource-query``;
 though you cannot update the ``switchd`` configuration with it.
 
 `plugin:content-inject <restart-switchd>`__
