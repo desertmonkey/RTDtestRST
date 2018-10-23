@@ -22,13 +22,7 @@ and sub-modes. NCLU:
 .. figure:: ../../images/Linux-NCLU-Architecture-2.png
    :alt: NCLU overview
 
-The NCLU wrapper utility called ``net`` is capable of configuring
-layer 2 and layer 3 features of the networking stack, installing ACLs
-and VXLANs, rolling back and deleting snapshots, as well as providing
-monitoring and troubleshooting functionality for these features. You can
-configure both the ``/etc/network/interfaces`` and ``/etc/frr/frr.conf`` files
-with ``net``, in addition to running show and clear commands related
-to ``ifupdown2`` and FRRouting.
+The NCLU wrapper utility called ``net`` is capable of configuring layer 2 and layer 3 features of the networking stack, installing ACLs and VXLANs, rolling back and deleting snapshots, as well as providing monitoring and troubleshooting functionality for these features. You can configure both the ``/etc/network/interfaces`` and ``/etc/frr/frr.conf`` files with ``net``, in addition to running show and clear commands related to ``ifupdown2`` and FRRouting.
 
 .. contents:: Contents
    :depth: 2
@@ -78,17 +72,10 @@ configuration with the following commands:
    OSPF neighbor content, and more.
 -  ``net rollback`` provides a mechanism to revert back to an earlier
    configuration.
--  ``net commit confirm`` requires you to press *Enter* to commit
-   changes using NCLU. If you run ``net commit confirm`` but do not
-   press *Enter* within 10 seconds, the commit automatically reverts and
-   no changes are made.
--  ``net commit permanent`` retains the taken when committing the
-   change. Otherwise, the snapshots created from NCLU commands are
-   cleaned up periodically with a snapper cron job. 
--  ``net commit delete`` deletes one or more snapshots created when
-   committing changes with NCLU.
--  ``net del all`` deletes all configurations and stops the IEEE 802.1X
-   service.
+-  ``net commit confirm`` requires you to press *Enter* to commit changes using NCLU. If you run ``net commit confirm`` but do not press *Enter* within 10 seconds, the commit automatically reverts and no changes are made.
+-  ``net commit permanent`` retains the taken when committing the change. Otherwise, the snapshots created from NCLU commands are cleaned up periodically with a snapper cron job. 
+-  ``net commit delete`` deletes one or more snapshots created when committing changes with NCLU.
+-  ``net del all`` deletes all configurations and stops the IEEE 802.1X service.
 
 .. note:: This command does not remove configurations, as NCLU does not interact with eth0 interfaces and management VRF.
 
