@@ -7,12 +7,13 @@ installing and running Cumulus Linux, as well as a collection of example
 commands for getting started after installation is complete.
 
 Contents
---------
+========
 
-[TOC]
+.. contents::
+   :depth: 2
 
 Prerequisites
--------------
+=============
 
 -  Intermediate-level Linux knowledge is assumed for this guide. You
    should be familiar with basic text editing, Unix file permissions,
@@ -23,7 +24,7 @@ Prerequisites
    `Cygwin <http://www.cygwin.com/>`__ as your command line tool for
    interacting with Cumulus Linux.
 
-!!!! If you are a networking engineer but are unfamiliar with Linux
+.. tip:: If you are a networking engineer but are unfamiliar with Linux
 concepts, refer to `this reference
 guide <https://support.cumulusnetworks.com/hc/en-us/articles/201787636>`__
 to compare the Cumulus Linux CLI and configuration options, and their
@@ -33,7 +34,7 @@ videos <http://cumulusnetworks.com/technical-videos/>`__ introducing you
 to Linux and Cumulus Linux-specific concepts.
 
 Installation
-------------
+============
 
 To install Cumulus Linux, you use
 `ONIE <https://github.com/opencomputeproject/onie/wiki>`__ (Open Network
@@ -42,7 +43,7 @@ that allows for automatic discovery of a network installer image. This
 facilitates the ecosystem model of procuring switches, with a user's own
 choice of operating system loaded, such as Cumulus Linux.
 
-! If Cumulus Linux 3.0.0 or later is already installed on your switch
+.. note:: If Cumulus Linux 3.0.0 or later is already installed on your switch
 and you need to upgrade the software only, you can skip to `Upgrading
 Cumulus Linux <#upgrade>`__ below.
 
@@ -62,11 +63,11 @@ discovery:
    terminal. After the installation completes, the Cumulus Linux login
    prompt appears in the terminal window.
 
-! These steps describe a flexible unattended installation method. You do
+.. note:: These steps describe a flexible unattended installation method. You do
 not need a console cable. A fresh install with ONIE using a local web
 server typically completes in less than ten minutes. ! You have more
 options for installing Cumulus Linux with ONIE. Read `Installing a New
-Cumulus Linux
+Cumulus Linux 
 Image <https://docs.cumulusnetworks.com/display/DOCS/Installing+a+New+Cumulus+Linux+Image>`__
 to install Cumulus Linux using ONIE in the following ways: ! - DHCP/web
 server with and without DHCP options ! - Web server without DHCP ! - FTP
@@ -86,7 +87,7 @@ After installing Cumulus Linux, you are ready to:
    on configuring switch ports and a loopback interface.
 
 Upgrade to the Latest Version 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------
 
 If you are running a Cumulus Linux version earlier than 3.0.0, you must
 perform a complete install, as `described
@@ -97,7 +98,7 @@ Linux <https://docs.cumulusnetworks.com/display/DOCS/Managing+Cumulus+Linux+Disk
 for considerations before starting the process.
 
 Getting Started
----------------
+===============
 
 When starting Cumulus Linux for the first time, the management port
 makes a DHCPv4 request. To determine the IP address of the switch, you
@@ -106,7 +107,7 @@ The MAC address is typically located on the side of the switch or on the
 box in which the unit ships.
 
 Login Credentials
-~~~~~~~~~~~~~~~~~
+-----------------
 
 The default installation includes one system account, *root*, with full
 system privileges, and one user account, *cumulus*, with ``sudo``
@@ -121,7 +122,7 @@ default password:
 In this quick start guide, you use the *cumulus* account to configure
 Cumulus Linux.
 
-!! For optimum security, change the default password (using the
+.. warning:: For optimum security, change the default password (using the
 ``passwd`` command) before you configure Cumulus Linux on the switch.
 
 All accounts except ``root`` are permitted remote SSH login; you can use
@@ -132,7 +133,7 @@ For more information about ``sudo``, read `Using sudo to Delegate
 Privileges <https://docs.cumulusnetworks.com/display/DOCS/Using+sudo+to+Delegate+Privileges>`__.
 
 Serial Console Management
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 You are encouraged to perform management and configuration over the
 network, `either in band or out of
@@ -144,7 +145,7 @@ Typically, switches ship from the manufacturer with a mating DB9 serial
 cable. Switches with ONIE are always set to a 115200 baud rate.
 
 Wired Ethernet Management
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 Switches supported in Cumulus Linux always contain at least one
 dedicated Ethernet management port, which is named eth0. This interface
@@ -153,7 +154,7 @@ interface uses DHCPv4 for addressing by default. You can set a static IP
 address with the Network Command Line Utility (NCLU).
 
 Example IP Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Set the static IP address with the ``interface address`` and
 ``interface gateway`` NCLU commands:
@@ -218,7 +219,7 @@ file and add the following configuration:
 [/ui-tab][/ui-tabs]
 
 Configuring the Hostname and Timezone
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------
 
 To change the hostname, run ``net add hostname``, which modifies both
 the\ ``/etc/hostname``\ and ``/etc/hosts`` files with the desired
@@ -230,13 +231,13 @@ hostname.
     cumulus@switch:~$ net pending
     cumulus@switch:~$ net commit
 
-! The command prompt in the terminal does not reflect the new hostname
-until you either log out of the switch or start a new shell.
-
-! When you use this NCLU command to set the hostname, DHCP **does not**
-override the hostname when you reboot the switch. However, if you
-disable the hostname setting with NCLU, DHCP **does** override the
-hostname the next time you reboot the switch.
+..note:: The command prompt in the terminal does not reflect the new hostname
+  until you either log out of the switch or start a new shell.
+  
+  When you use this NCLU command to set the hostname, DHCP **does not**
+  override the hostname when you reboot the switch. However, if you
+  disable the hostname setting with NCLU, DHCP **does** override the
+  hostname the next time you reboot the switch.
 
 To update the timezone, use the NTP interactive mode:
 
@@ -245,13 +246,13 @@ To update the timezone, use the NTP interactive mode:
 2. Follow the on screen menu options to select the geographic area and
    region.
 
-! Programs that are already running (including log files) and users
+.. note:: Programs that are already running (including log files) and users
 currently logged in, do not see timezone changes made with interactive
 mode. To have the timezone set for all services and daemons, a reboot is
 required.
 
 Verifying the System Time
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 Before you install the license, verify that the date and time on the
 switch are correct. You must `correct the date and
@@ -264,7 +265,7 @@ errors like this one after you restart ``switchd``:
     daemon-reload' recommended.
 
 Installing the License
-~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
 Cumulus Linux is licensed on a per-instance basis. Each network system
 is fully operational, enabling any capability to be utilized on the
@@ -292,25 +293,27 @@ There are three ways to install the license onto the switch:
 -  Copy and paste the license key into the ``cl-license`` command:
    ``cumulus@switch:~$ sudo cl-license -i   <paste license key>   ^+d``
 
-! It is not necessary to reboot the switch to activate the switch ports.
-After you install the license, restart the ``switchd`` service. All
-front panel ports become active and show up as swp1, swp2, and so on. !
-``! cumulus@switch:~$ sudo systemctl restart switchd.service !``
+.. note:: It is not necessary to reboot the switch to activate the switch ports.
+   After you install the license, restart the ``switchd`` service. All
+   front panel ports become active and show up as swp1, swp2, and so on.
+   :: 
 
-! If a license is not installed on a Cumulus Linux switch, the
-``switchd`` service does not start. After you install the license, start
-``switchd`` as described above.
+      cumulus@switch:~$ sudo systemctl restart switchd.service
+      
+    If a license is not installed on a Cumulus Linux switch, the ``switchd`` 
+    service does not start. After you install the license, start
+    ``switchd`` as described above.
 
-Configuring Breakout Ports with Splitter Cables
------------------------------------------------
+Configure Breakout Ports with Splitter Cables
+=============================================
 
 If you are using 4x10G DAC or AOC cables, or want to break out 100G or
 40G switch ports, configure the breakout ports. For more details, see
 `Layer 1 and Switch Port
 Attributes <https://docs.cumulusnetworks.com/display/DOCS/Switch+Port+Attributes#SwitchPortAttributes-breakout>`__.
 
-Testing Cable Connectivity
---------------------------
+Test Cable Connectivity
+=======================
 
 By default, all data plane ports (every Ethernet port except the
 management interface, eth0) are disabled.
@@ -363,34 +366,58 @@ and ``up`` modes:
     ADMDN  rename13                  0M       1500   NotConfigured
     ADMDN  vagrant                   0M       1500   NotConfigured
 
-Configuring Switch Ports
-------------------------
+Configure Switch Ports
+======================
 
 Layer 2 Port Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 Cumulus Linux does not put all ports into a bridge by default. To create
 a bridge and configure one or more front panel ports as members of the
 bridge, use the following examples as guides.
 
 Examples
-^^^^^^^^
+~~~~~~~~
 
-!!! **Example One** !!! !!! In the following configuration example, the
-front panel port swp1 is placed into a bridge called *bridge*. The NCLU
-commands are: !!!
-``!!! cumulus@switch:~$ net add bridge bridge ports swp1 !!! cumulus@switch:~$ net pending !!! cumulus@switch:~$ net commit !!!``
-!!! The commands above produce the following ``/etc/network/interfaces``
-snippet: !!!
-``!!! auto bridge !!! iface bridge !!!    bridge-ports swp1 !!!    bridge-vlan-aware yes !!!``
+**Example One** 
 
-!!! **Example Two** !!! !!! You can add a range of ports in one command.
-For example, add swp1 through swp10, swp12, and swp14 through swp20 to
-bridge: !!! !!!
-``!!! cumulus@switch:~$ net add bridge bridge ports swp1-10,12,14-20 !!! cumulus@switch:~$ net pending !!! cumulus@switch:~$ net commit !!!``
-!!! !!! The commands above produce the following snippet in the
-``/etc/network/interfaces`` file: !!! !!!
-``!!! auto bridge !!! iface bridge !!!     bridge-ports swp1 swp2 swp3 swp4 swp5 swp6 swp7 swp8 swp9 swp10 swp12 swp14 swp15 swp16 swp17 swp18 swp19 swp20 !!!     bridge-vlan-aware yes !!!``
+In the following configuration example, the front panel port swp1 is placed 
+into a bridge called *bridge*. The NCLU commands are: 
+
+::
+
+    cumulus@switch:~$ net add bridge bridge ports swp1 
+    cumulus@switch:~$ net pending !!! cumulus@switch:~$ net commit 
+
+The commands above produce the following ``/etc/network/interfaces``snippet: 
+
+::
+
+    auto bridge
+    iface bridge
+        bridge-ports swp1
+        bridge-vlan-aware yes 
+
+**Example Two**
+
+You can add a range of ports in one command. For example, add swp1 through 
+swp10, swp12, and swp14 through swp20 to bridge:
+
+::
+
+    cumulus@switch:~$ net add bridge bridge ports swp1-10,12,14-20
+    cumulus@switch:~$ net pending
+    cumulus@switch:~$ net commit
+    
+The commands above produce the following snippet in the 
+``/etc/network/interfaces`` file:
+
+:: 
+
+    auto bridge
+    iface bridge
+         bridge-ports swp1 swp2 swp3 swp4 swp5 swp6 swp7 swp8 swp9 swp10 swp12 swp14 swp15 swp16 swp17 swp18 swp19 swp20 
+         bridge-vlan-aware yes
 
 To view the changes in the kernel, use the ``brctl`` command:
 
@@ -402,7 +429,7 @@ To view the changes in the kernel, use the ``brctl`` command:
                                                            swp2
 
 Layer 3 Port Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 You can also use NCLU to configure a front panel port or bridge
 interface as a layer 3 port.
@@ -468,15 +495,15 @@ To view the changes in the kernel, use the ``ip addr show`` command:
           valid_lft forever preferred_lft forever    
     ...
 
-Configuring a Loopback Interface
---------------------------------
+Configure a Loopback Interface
+==============================
 
 Cumulus Linux has a loopback preconfigured in the
 ``/etc/network/interfaces`` file. When the switch boots up, it has a
 loopback interface, called *lo*, which is up and assigned an IP address
 of 127.0.0.1.
 
-!!!! The loopback interface *lo* must always be specified in the
+.. tip:: The loopback interface *lo* must always be specified in the
 ``/etc/network/interfaces`` file and must always be up.
 
 To see the status of the loopback interface (lo), use the
