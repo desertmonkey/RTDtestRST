@@ -22,8 +22,6 @@ and sub-modes. NCLU:
 .. figure:: ../../images/Linux-NCLU-Architecture-2.png
    :alt: NCLU overview
 
-   NCLU overview
-
 The NCLU wrapper utility called \ ``net`` is capable of configuring
 layer 2 and layer 3 features of the networking stack, installing ACLs
 and VXLANs, rolling back and deleting snapshots, as well as providing
@@ -33,13 +31,11 @@ the \ ``/etc/network/interfaces`` and ``/etc/frr/frr.conf`` files
 with \ ``net``, in addition to running show and clear commands related
 to \ ``ifupdown2`` and FRRouting.
 
-Contents
---------
-
-[TOC]
+.. contents:: Contents
+   :depth: 2
 
 Install NCLU
-------------
+============
 
 If you upgraded Cumulus Linux from a version earlier than 3.2 instead of
 performing a full binary install, you need to install the ``nclu``
@@ -51,12 +47,15 @@ package on your switch:
     cumulus@switch:~$ sudo -E apt-get install nclu
     cumulus@switch:~$ sudo -E apt-get upgrade
 
-! The  ``nclu`` package installs a new bash completion script and
-displays the following message: !
-``! Setting up nclu (1.0-cl3u3) ... ! To enable the newly installed bash completion for nclu in this shell, execute... !     source /etc/bash_completion !``
+.. note:: The  ``nclu`` package installs a new bash completion script and
+displays the following message:
+   ::  
+       Setting up nclu (1.0-cl3u3) ... 
+       To enable the newly installed bash completion for nclu in this shell, execute... 
+       source /etc/bash_completion
 
 NCLU Basics
------------
+===========
 
 Use the following workflow to stage and commit changes to Cumulus Linux
 with NCLU:
@@ -67,7 +66,7 @@ with NCLU:
 3. Use \ ``net commit`` and \ ``net abort`` to commit and delete staged
    changes.  
 
-! ``net commit`` applies the changes to the relevant configuration
+.. note:: ``net commit`` applies the changes to the relevant configuration
 files, such as ``/etc/network/interfaces``, then runs necessary follow
 on commands to enable the configuration, such as ``ifreload -a``. ! If
 two different users try to commit a change at the same time, NCLU
@@ -98,11 +97,11 @@ configuration with the following commands:
 -  ``net del all`` deletes all configurations and stops the IEEE 802.1X
    service.
 
-! This command does not remove configurations, as NCLU does not interact
+.. note:: This command does not remove configurations, as NCLU does not interact
 with eth0 interfaces and management VRF.
 
 Tab Completion, Verification, and Inline Help
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------------------
 
 In addition to tab completion and partial keyword command
 identification, NCLU includes verification checks to ensure correct
@@ -131,9 +130,6 @@ commands:
 NCLU has a comprehensive built in help system. In addition to the net
 man page, you can use \ ``?`` and \ ``help`` to display available
 commands:
-
-[ui-accordion independent=true open=none][ui-accordion-item title="net
-help Output"]
 
 ::
 
@@ -202,41 +198,35 @@ help Output"]
      
     [plugin:content-inject](../switchd/restart-switchd)
      
-    [/ui-accordion-item]
-    [/ui-accordion]
 
+    .. note::  You can configure multiple interfaces at once:
+       ::
+       
+           cumulus@switch:~$ net add int swp7-9,12,15-17,22 mtu 9216
 
-    ! You can configure multiple interfaces at once:
-    ! ```
-    ! cumulus@switch:~$ net add int swp7-9,12,15-17,22 mtu 9216
-    ! ```
+Add ? (Question Mark) Ability to NCLU
+-------------------------------------
 
-    ### Add ? (Question Mark) Ability to NCLU
+While tab completion is enabled by default, you can also configure NCLU to use the **?** (question mark character) to look at available commands. To enable this feature for the _cumulus_ user, open the following file:
 
-    While tab completion is enabled by default, you can also configure NCLU to use the **?** (question mark character) to look at available commands. To enable this feature for the _cumulus_ user, open the following file:
-
-cumulus@leaf01:~$ sudo nano ~/.inputrc
 
 ::
 
+    cumulus@leaf01:~$ sudo nano ~/.inputrc
 
-    Uncomment the very last line in the `.inputrc` file so that the file changes from this:
+Uncomment the very last line in the `.inputrc` file so that the file changes from this:
 
-Uncomment to use ? as an alternative to
-=======================================
+::  
 
-?: complete
-===========
+    # Uncomment to use ? as an alternative to
+    # ?: complete
 
-::
+to this:
 
+::  
 
-    to this:
-
-Uncomment to use ? as an alternative to
-=======================================
-
-?: complete \`\`\`
+    # Uncomment to use ? as an alternative to
+    # ?: complete
 
 Save the file and reconnect to the switch. The ? (question mark) ability
 will work on all subsequent sessions on the switch.
@@ -255,12 +245,12 @@ will work on all subsequent sessions on the switch.
         rollback  :  revert to a previous configuration state
         show      :  show command output
 
-! When the question mark is typed, NCLU autocompletes and shows all
+.. note:: When the question mark is typed, NCLU autocompletes and shows all
 available options, but the question mark does not actually appear on the
 terminal. This is normal, expected behavior.
 
 Built-In Examples
-~~~~~~~~~~~~~~~~~
+-----------------
 
 NCLU has a number of built in examples to guide users through basic
 configuration setup:
@@ -329,7 +319,7 @@ configuration setup:
     switch1# net show bridge macs
 
 Configure User Accounts
------------------------
+=======================
 
 You can configure user accounts in Cumulus Linux with read-only or edit
 permissions for NCLU:
@@ -397,7 +387,7 @@ error displays:
     ERROR: User username does not have permission to make networking changes.
 
 Edit the netd.conf File
------------------------
+=======================
 
 Instead of using the NCLU commands described above, you can manually
 configure users and groups to be able to run NCLU commands. 
@@ -431,7 +421,7 @@ To configure a new user group to use NCLU, add that group to the
 give edit permissions to the \ *tacacs* group.
 
 Restart the netd Service
-------------------------
+========================
 
 Whenever you modify ``netd.conf``, you must restart the ``netd`` service
 for the changes to take effect:
@@ -441,7 +431,7 @@ for the changes to take effect:
     cumulus@switch:~$ sudo systemctl restart netd.service
 
 Back Up the Configuration to a Single File
-------------------------------------------
+==========================================
 
 You can easily back up your NCLU configuration to a file by outputting
 the results of \ ``net show configuration commands`` to a file, then
@@ -466,7 +456,7 @@ configuration by running:
     cumulus@leaf01:~$ source leaf01.txt
 
 Advanced Configuration
-----------------------
+======================
 
 NCLU needs no initial configuration; it is ready to go in Cumulus Linux.
 However, if you need to modify its configuration, you must manually
@@ -586,6 +576,6 @@ frequently used terms from the tabbed autocomplete. 
 |                            | bridge-mcqv4src    |                |
 +----------------------------+--------------------+----------------+
 
-!!! ``net`` provides an environment variable to set where the ``net``
+.. tip:: ``net`` provides an environment variable to set where the ``net``
 output is directed. To only use ``stdout``, set the ``NCLU_TAB_STDOUT``
 environment variable to *true*. The value is not case sensitive.
