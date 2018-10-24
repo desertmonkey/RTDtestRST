@@ -54,11 +54,11 @@ a {
 }
 
 .rst-content .note {
-    background-color: #78cdd1 !important;
+    background-color: #ffc82e !important;
 }
 
 .rst-content .note .admonition-title {
-    background-color: #1eb5bd !important;
+    background-color: darken(#ffc82e,10%) !important;
 }
 
 .rst-content .tip {
