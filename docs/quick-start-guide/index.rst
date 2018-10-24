@@ -21,14 +21,7 @@ Prerequisites
    `Cygwin <http://www.cygwin.com/>`__ as your command line tool for
    interacting with Cumulus Linux.
 
-.. tip:: If you are a networking engineer but are unfamiliar with Linux
-concepts, refer to `this reference
-guide <https://support.cumulusnetworks.com/hc/en-us/articles/201787636>`__
-to compare the Cumulus Linux CLI and configuration options, and their
-equivalent Cisco Nexus 3000 NX-OS commands and settings. You can also
-`watch a series of short
-videos <http://cumulusnetworks.com/technical-videos/>`__ introducing you
-to Linux and Cumulus Linux-specific concepts.
+.. tip:: If you are a networking engineer but are unfamiliar with Linux concepts, refer to `this reference guide <https://support.cumulusnetworks.com/hc/en-us/articles/201787636>`__ to compare the Cumulus Linux CLI and configuration options, and their equivalent Cisco Nexus 3000 NX-OS commands and settings. You can also `watch a series of short videos <http://cumulusnetworks.com/technical-videos/>`__ introducing you to Linux and Cumulus Linux-specific concepts.
 
 Installation
 ============
@@ -40,9 +33,7 @@ that allows for automatic discovery of a network installer image. This
 facilitates the ecosystem model of procuring switches, with a user's own
 choice of operating system loaded, such as Cumulus Linux.
 
-.. note:: If Cumulus Linux 3.0.0 or later is already installed on your switch
-and you need to upgrade the software only, you can skip to `Upgrading
-Cumulus Linux <#upgrade>`__ below.
+.. note:: If Cumulus Linux 3.0.0 or later is already installed on your switch and you need to upgrade the software only, you can skip to `Upgrading Cumulus Linux <#upgrade>`__ below.
 
 The easiest way to install Cumulus Linux with ONIE is with local HTTP
 discovery:
@@ -60,15 +51,12 @@ discovery:
    terminal. After the installation completes, the Cumulus Linux login
    prompt appears in the terminal window.
 
-.. note:: These steps describe a flexible unattended installation method. You do
-not need a console cable. A fresh install with ONIE using a local web
-server typically completes in less than ten minutes. ! You have more
-options for installing Cumulus Linux with ONIE. Read `Installing a New
-Cumulus Linux 
-Image <https://docs.cumulusnetworks.com/display/DOCS/Installing+a+New+Cumulus+Linux+Image>`__
-to install Cumulus Linux using ONIE in the following ways: ! - DHCP/web
-server with and without DHCP options ! - Web server without DHCP ! - FTP
-or TFTP without a web server ! - Local file ! - USB
+.. note:: These steps describe a flexible unattended installation method. You do not need a console cable. A fresh install with ONIE using a local web server typically completes in less than ten minutes. You have more options for installing Cumulus Linux with ONIE. Read `Installing a New Cumulus Linux Image <https://docs.cumulusnetworks.com/display/DOCS/Installing+a+New+Cumulus+Linux+Image>`__ to install Cumulus Linux using ONIE in the following ways: 
+    - DHCP/web server with and without DHCP options 
+    - Web server without DHCP 
+    - FTP or TFTP without a web server 
+    - Local file 
+    - USB
 
 ONIE supports many other discovery mechanisms using USB (copy the
 installer to the root of the drive), DHCPv6 and DHCPv4, and image copy
@@ -119,8 +107,7 @@ default password:
 In this quick start guide, you use the *cumulus* account to configure
 Cumulus Linux.
 
-.. warning:: For optimum security, change the default password (using the
-``passwd`` command) before you configure Cumulus Linux on the switch.
+.. warning:: For optimum security, change the default password (using the ``passwd`` command) before you configure Cumulus Linux on the switch.
 
 All accounts except ``root`` are permitted remote SSH login; you can use
 ``sudo`` to grant a non-root account root-level access. Commands that
@@ -243,10 +230,7 @@ To update the timezone, use the NTP interactive mode:
 2. Follow the on screen menu options to select the geographic area and
    region.
 
-.. note:: Programs that are already running (including log files) and users
-currently logged in, do not see timezone changes made with interactive
-mode. To have the timezone set for all services and daemons, a reboot is
-required.
+.. note:: Programs that are already running (including log files) and users currently logged in, do not see timezone changes made with interactive mode. To have the timezone set for all services and daemons, a reboot is required.
 
 Verifying the System Time
 -------------------------
@@ -500,8 +484,7 @@ Cumulus Linux has a loopback preconfigured in the
 loopback interface, called *lo*, which is up and assigned an IP address
 of 127.0.0.1.
 
-.. tip:: The loopback interface *lo* must always be specified in the
-``/etc/network/interfaces`` file and must always be up.
+.. tip:: The loopback interface *lo* must always be specified in the ``/etc/network/interfaces`` file and must always be up.
 
 To see the status of the loopback interface (lo), use the
 ``net show interface lo`` command:
