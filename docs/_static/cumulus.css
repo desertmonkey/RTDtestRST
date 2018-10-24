@@ -21,10 +21,6 @@ pre code {
     font-size: 1rem;
 }
 
-.wy-side-nav-search { 
-    background-color: #00ad69 !important;
-}
-
 a {
     color: #00ad69 !important;
 
@@ -40,8 +36,7 @@ a {
     color: #f1446f !important;	
 }
 
-	
-.rst-versions {
+.rst-versions .rst-current-version {
     color: #00ad69 !important;
 }
 
@@ -49,3 +44,10 @@ a {
     color: #00ad69 !important;
 }
 
+.rst-content .note {
+    color: #78cdd1 !important;
+}
+
+.rst-content .note .admonition-title {
+    color: #1eb5bd !important;
+}
