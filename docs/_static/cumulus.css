@@ -28,14 +28,19 @@ pre code {
 a {
     color: #00ad69;
 
-a.hover { 
+a hover { 
     color: #009271;
 }
 	
-a.visited {
+a visited {
     color: #7ccc6c;
 }
 	
-code.literal {
+code literal {
     color: #f1446f;	
+}
+
+	
+.rst-versions {
+    color: #00ad69;
 }
