@@ -54,9 +54,9 @@ a {
 }
 
 .rst-content .note {
-    color: #78cdd1 !important;
+    background-color: #78cdd1 !important;
 }
 
 .rst-content .note .admonition-title {
-    color: #1eb5bd !important;
+    background-color: #1eb5bd !important;
 }
