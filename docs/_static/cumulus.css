@@ -9,7 +9,7 @@ pre {
     padding: 1rem;
     margin: 2rem 0;
     background: #EAEDF2;
-    border: 5px solid #b5bdc9;
+    border: 1px solid #b5bdc9;
     border-radius: 2px;
     line-height: 1.15;
     font-size: 1rem;
@@ -22,31 +22,30 @@ pre code {
 }
 
 .wy-side-nav-search { 
-    background-color: #00ad69;
+    background-color: #00ad69 !important;
 }
 
 a {
-    color: #00ad69;
+    color: #00ad69 !important;
 
 .hover { 
-    color: #009271;
+    color: #009271 !important;
 }
 	
 .visited {
-    color: #7ccc6c;
+    color: #7ccc6c !important;
 }
 	
 .literal {
-    color: #f1446f;	
+    color: #f1446f !important;	
 }
 
 	
 .rst-versions {
-    color: #00ad69;
+    color: #00ad69 !important;
 }
 
 .headerlink {
-    color: #00ad69;
+    color: #00ad69 !important;
 }
 
-	
