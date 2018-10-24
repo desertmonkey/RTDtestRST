@@ -20,3 +20,22 @@ pre code {
     background: inherit;
     font-size: 1rem;
 }
+
+.wy-side-nav-search { 
+    background-color: #00ad69;
+}
+
+a {
+    color: #00ad69;
+
+a.hover { 
+    color: #009271;
+}
+	
+a.visited {
+    color: #7ccc6c;
+}
+	
+code.literal {
+    color: #f1446f;	
+}
