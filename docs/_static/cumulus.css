@@ -60,3 +60,11 @@ a {
 .rst-content .note .admonition-title {
     background-color: #1eb5bd !important;
 }
+
+.rst-content .tip {
+    background-color: #7CCC6C !important;
+}
+
+.rst-content .tip .admonition-title {
+    background-color: #00ad69 !important;
+}
