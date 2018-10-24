@@ -52,6 +52,7 @@ discovery:
    prompt appears in the terminal window.
 
 .. note:: These steps describe a flexible unattended installation method. You do not need a console cable. A fresh install with ONIE using a local web server typically completes in less than ten minutes. You have more options for installing Cumulus Linux with ONIE. Read `Installing a New Cumulus Linux Image <https://docs.cumulusnetworks.com/display/DOCS/Installing+a+New+Cumulus+Linux+Image>`__ to install Cumulus Linux using ONIE in the following ways: 
+
    - DHCP/web server with and without DHCP options 
    - Web server without DHCP 
    - FTP or TFTP without a web server 
