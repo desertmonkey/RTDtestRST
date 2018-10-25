@@ -58,7 +58,7 @@ a {
 }
 
 .rst-content .note .admonition-title {
-    background-color: darken(#ffc82e,10%) !important;
+    background-color: #ffa12d !important;
 }
 
 .rst-content .tip {
