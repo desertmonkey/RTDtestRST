@@ -100,8 +100,7 @@ command. First, determine your current time zone:
 
     cumulus@switch$ date +%Z
 
-.. note:: If you need to reconfigure the current time zone, refer to the
-instructions above.
+.. note:: If you need to reconfigure the current time zone, refer to the instructions above.
 
 Then, to set the system clock according to the time zone configured:
 
@@ -327,26 +326,13 @@ clock out of all of its master ports.
 Cumulus Linux includes the ``ptp4l`` package for PTP, which uses the
 ``phc2sys`` daemon to synchronize the PTP clock with the system clock.
 
-.. note:: \* Cumulus Linux currently supports PTP on the Mellanox Spectrum ASIC
-only. ! \* If you do not perform a binary (full image) install of
-Cumulus Linux 3.6 or later, you need to install the ``ptp4l`` package
-with the ``apt-get install ptp4l`` command. ! \* PTP is supported in
-boundary clock mode only (the switch provides timing to downstream
-servers; it is a slave to a higher-level clock and a master to
-downstream clocks). ! \* The switch uses hardware time stamping to
-capture timestamps from an Ethernet frame at the physical layer. This
-allows PTP to account for delays in message transfer and greatly
-improves the accuracy of time synchronization. ! \* Only IPv4/UDP PTP
-packets are supported. ! \* Only a single PTP domain per network is
-supported. A PTP domain is a network or a portion of a network within
-which all the clocks are synchronized.
+.. note:: * Cumulus Linux currently supports PTP on the Mellanox Spectrum ASIC only. 
+   * If you do not perform a binary (full image) install of Cumulus Linux 3.6 or later, you need to install the ``ptp4l`` package with the ``apt-get install ptp4l`` command. 
+   * PTP is supported in boundary clock mode only (the switch provides timing to downstream servers; it is a slave to a higher-level clock and a master to downstream clocks). 
+    * The switch uses hardware time stamping to capture timestamps from an Ethernet frame at the physical layer. This allows PTP to account for delays in message transfer and greatly improves the accuracy of time synchronization. ! \* Only IPv4/UDP PTP packets are supported. 
+    * Only a single PTP domain per network is supported. A PTP domain is a network or a portion of a network within which all the clocks are synchronized.
 
-In the following example, boundary clock 2 receives time from Master 1
-(the grandmaster) on a PTP slave port, sets its clock and passes the
-time down from the PTP master port to boundary clock 1. Boundary clock 1
-receives the time on a PTP slave port, sets its clock and passes the
-time down the hierarchy through the PTP master ports to the hosts that
-receive the time.
+In the following example, boundary clock 2 receives time from Master 1 (the grandmaster) on a PTP slave port, sets its clock and passes the time down from the PTP master port to boundary clock 1. Boundary clock 1 receives the time on a PTP slave port, sets its clock and passes the time down the hierarchy through the PTP master ports to the hosts that receive the time.
 
 .. figure:: ../../images/PTPExample.png
    :alt: PTP example
@@ -374,7 +360,7 @@ Configure the PTP Boundary Clock
 
 To configure a boundary clock:
 
-1. Configure the interfaces on the switch that you want to use for PTP.
+#. Configure the interfaces on the switch that you want to use for PTP.
    Each interface must be configured as a layer 3 routed interface with
    an IP address. ! PTP *is* supported on BGP unnumbered interfaces. !
    PTP is *not* supported on switched virtual interfaces (SVIs).
@@ -384,7 +370,7 @@ To configure a boundary clock:
        cumulus@switch:~$ net add interface swp13s0 ip address 10.0.0.9/32
        cumulus@switch:~$ net add interface swp13s1 ip address 10.0.0.10/32
 
-2. Configure PTP options on the switch:
+#. Configure PTP options on the switch:
 
    -  Set the ``gm-capable`` option to ``no`` to configure the switch to
       be a boundary clock.
@@ -403,20 +389,27 @@ To configure a boundary clock:
 
    The following commands provide an example configuration:
 
-``cumulus@switch:~$ net add ptp global gm-capable no cumulus@switch:~$ net add ptp global priority2 254 cumulus@switch:~$ net add ptp global priority1 254 cumulus@switch:~$ net add ptp global time-stamping cumulus@switch:~$ net add ptp interface swp13s0 cumulus@switch:~$ net add ptp interface swp13s1 cumulus@switch:~$ net pending cumulus@switch:~$ net commit``
+   :: 
+ 
+       cumulus@switch:~$ net add ptp global gm-capable no 
+       cumulus@switch:~$ net add ptp global priority2 254 
+       cumulus@switch:~$ net add ptp global priority1 254 
+       cumulus@switch:~$ net add ptp global time-stamping 
+       cumulus@switch:~$ net add ptp interface swp13s0 
+       cumulus@switch:~$ net add ptp interface swp13s1 
+       cumulus@switch:~$ net pending 
+       cumulus@switch:~$ net commit
 
-::
+   The `ptp4l` man page describes all the configuration parameters.
 
-    The `ptp4l` man page describes all the configuration parameters.
-
-1. Restart the ``ptp4l`` and ``phc2sys`` daemons:
+#. Restart the ``ptp4l`` and ``phc2sys`` daemons:
 
    ::
 
        cumulus@switch:~$ sudo systemctl restart ptp41.service phc2sys.service
 
    The configuration is saved in the ``/etc/ptp4l.conf`` file.
-2. Enable the services to start at boot time:
+#. Enable the services to start at boot time:
 
    ::
 
@@ -557,7 +550,6 @@ nanoseconds from the master clock, run the
             lastGmPhaseChange          0x0000'0000000000000000.0000
             gmPresent                  true
             gmIdentity                 000200.fffe.000005     
-     ```
      
 Delete PTP Boundary Clock Configuration
 ---------------------------------------
@@ -581,11 +573,16 @@ Before you create the file, ensure that the DHCP-generated configuration file ex
 
 To use an alternate configuration file that persists across upgrades of Cumulus Linux, create a `systemd` unit override file called `/etc/systemd/system/ntp.service.d/config.conf` and add the following content:
 
-cumulus@switch:~$ sudo echo ' [Service] ExecStart=
-ExecStart=/usr/sbin/ntpd -n -u ntp:ntp -g -c /run/ntp.conf.dhcp ' >
-~/over sudo mkdir -p /etc/systemd/system/ntp.service.d sudo mv ~/over
-/etc/systemd/system/ntp.service.d/dhcp.conf sudo chown root:root
-/etc/systemd/system/ntp.service.d/dhcp.conf
+:: 
+
+    cumulus@switch:~$ sudo echo ' 
+    [Service] 
+    ExecStart=
+    ExecStart=/usr/sbin/ntpd -n -u ntp:ntp -g -c /run/ntp.conf.dhcp 
+    ' > ~/over 
+    sudo mkdir -p /etc/systemd/system/ntp.service.d 
+    sudo mv ~/over/etc/systemd/system/ntp.service.d/dhcp.conf 
+    sudo chown root:root/etc/systemd/system/ntp.service.d/dhcp.conf
 
 To validate that your configuration, run these commands:
 
