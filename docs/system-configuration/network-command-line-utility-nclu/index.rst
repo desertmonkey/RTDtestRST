@@ -72,7 +72,7 @@ configuration with the following commands:
    OSPF neighbor content, and more.
 -  ``net rollback`` provides a mechanism to revert back to an earlier
    configuration.
--  ``net commit confirm`` requires you to press *Enter* to commit changes using NCLU. If you run ``net commit confirm`` but do not press *Enter* within 10 seconds, the commit automatically reverts and no changes are made.
+-  ``net commit confirm`` requires you to press *Enter* to commit changes using NCLU. If you run ``net commit confirm`` but do not press *Enter* within 10 seconds, the commit automatically reverts and no changes are made. 
 -  ``net commit permanent`` retains the taken when committing the change. Otherwise, the snapshots created from NCLU commands are cleaned up periodically with a snapper cron job. 
 -  ``net commit delete`` deletes one or more snapshots created when committing changes with NCLU.
 -  ``net del all`` deletes all configurations and stops the IEEE 802.1X service.
@@ -297,12 +297,10 @@ Configure User Accounts
 You can configure user accounts in Cumulus Linux with read-only or edit
 permissions for NCLU:
 
--  You create user accounts with **read-only** permissions for NCLU by 
-   adding them to the *netshow* group. A user in the netshow group can run NCLU ``net show`` commands, such as ``net show interface`` or ``net show config``, and certain general Linux commands, such as ``ls``, ``cd`` or ``man``, but cannot run ``net add``, ``net del`` or ``net commit`` commands. 
--  You create user accounts with **edit** permissions for NCLU by adding them to the ``netedit`` group. A user in the ``netedit`` group can run NCLU configuration commands, such ``net add``, ``net del`` or ``net commit`` in addition to NCLU ``net show`` commands.
+-  You create user accounts with **read-only** permissions for NCLU by adding them to the *netshow* group. A user in the netshow group can run NCLU ``net show`` commands, such as ``net show interface`` or ``net show config``, and certain general Linux commands, such as ``ls``, ``cd`` or ``man``, but cannot run ``net add``, ``net del`` or ``net commit`` commands. 
+-  You create user accounts with **edit** permissions for NCLU by adding them to the *netedit* group. A user in the netedit group can run NCLU configuration commands, such as ``net add``, ``net del`` or ``net commit`` in addition to NCLU ``net show`` commands. 
 
-The examples below demonstrate how to add a new user account or modify
-an existing user account called *myuser*.
+The examples below demonstrate how to add a new user account or modify an existing user account called *myuser*.
 
 To add a new user account with NCLU show permissions:
 
@@ -423,12 +421,7 @@ configuration by running:
 Advanced Configuration
 ======================
 
-NCLU needs no initial configuration; it is ready to go in Cumulus Linux.
-However, if you need to modify its configuration, you must manually
-update the ``/etc/netd.conf`` file. You can configure this file to
-allow different permission levels for users to edit configurations and
-run ``show`` commands. It also contains a blacklist that hides less
-frequently used terms from the tabbed autocomplete. 
+NCLU needs no initial configuration; it is ready to go in Cumulus Linux. However, if you need to modify its configuration, you must manually update the ``/etc/netd.conf`` file. You can configure this file to allow different permission levels for users to edit configurations and run ``show`` commands. It also contains a blacklist that hides less frequently used terms from the tabbed autocomplete. 
 
 +----------------------------+--------------------+----------------+
 | Configuration Variable     | Default Setting    | Description    |
