@@ -119,7 +119,20 @@ To verify that the value changed, use ``grep``:
     buf_util.poll_interval = 0
     buf_util.measure_interval = 1
 
-.. note:: You can get some of this information by running ``cl-resource-query``;
-though you cannot update the ``switchd`` configuration with it.
+.. note:: You can get some of this information by running ``cl-resource-query``; though you cannot update the ``switchd`` configuration with it.
 
-`plugin:content-inject <restart-switchd>`__
+Restart switchd
+===============
+
+Whenever you modify any ``switchd`` hardware configuration file
+(typically changing any ``*.conf`` file that requires making a change to
+the switching hardware, like ``/etc/cumulus/datapath/traffic.conf``),
+you must restart ``switchd`` for the change to take effect:
+
+::
+
+    cumulus@switch:~$ sudo systemctl restart switchd.service
+
+.. note:: You do not have to restart the ``switchd`` service when you update a network interface configuration (that is, edit ``/etc/network/interfaces``).
+
+.. warning:: Restarting ``switchd`` causes all network ports to reset in addition to resetting the switch hardware configuration.
