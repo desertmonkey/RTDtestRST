@@ -11,7 +11,7 @@ Welcome to RTD Test Project's documentation!
 ============================================
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :titlesonly:
    
    quick-start-guide/index
