@@ -12,7 +12,6 @@ Welcome to RTD Test Project's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :titlesonly:
    
    quick-start-guide/index
    system-configuration/network-command-line-utility-nclu/index
