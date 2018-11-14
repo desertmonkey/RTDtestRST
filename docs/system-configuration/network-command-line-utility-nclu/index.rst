@@ -41,9 +41,9 @@ package on your switch:
     cumulus@switch:~$ sudo -E apt-get upgrade
 
 .. note:: The ``nclu`` package installs a new bash completion script and displays the following message:
-   ::  
-       Setting up nclu (1.0-cl3u3) ... 
-       To enable the newly installed bash completion for nclu in this shell, execute... 
+   ::
+       Setting up nclu (1.0-cl3u3) ...
+       To enable the newly installed bash completion for nclu in this shell, execute...
        source /etc/bash_completion
 
 NCLU Basics
@@ -72,10 +72,10 @@ configuration with the following commands:
    OSPF neighbor content, and more.
 -  ``net rollback`` provides a mechanism to revert back to an earlier
    configuration.
--  ``net commit confirm`` requires you to press *Enter* to commit changes using NCLU. If you run ``net commit confirm`` but do not press *Enter* within 10 seconds, the commit automatically reverts and no changes are made. 
--  ``net commit permanent`` retains the taken when committing the change. Otherwise, the snapshots created from NCLU commands are cleaned up periodically with a snapper cron job. 
--  ``net commit delete`` deletes one or more snapshots created when committing changes with NCLU.
--  ``net del all`` deletes all configurations and stops the IEEE 802.1X service.
+-  ``net commit confirm`` requires you to press *Enter* to commit changes using NCLU. If you run ``net commit confirm`` but do not press *Enter* within 10 seconds, the commit automatically reverts and no changes are made.
+-  ``net commit permanent`` retains the taken when committing the change. Otherwise, the snapshots created from NCLU commands are cleaned up periodically with a snapper cron job. 
+-  ``net commit delete`` deletes one or more snapshots created when committing changes with NCLU.
+-  ``net del all`` deletes all configurations and stops the IEEE 802.1X service.
 
 .. note:: This command does not remove configurations, as NCLU does not interact with eth0 interfaces and management VRF.
 
@@ -91,18 +91,18 @@ commands:
 
     cumulus@switch:~$ net add bgp router-id 1.1.1.1/32
     ERROR: Command not found
-     
+
     Did you mean one of the following?
-     
+
         net add bgp router-id <ipv4>
             This command is looking for an IP address, not an IP/prefixlen
-     
+
     cumulus@switch:~$ net add bgp router-id 1.1.1.1
     cumulus@switch:~$ net add int swp10 mtu <TAB>
         <552-9216> :
     cumulus@switch:~$ net add int swp10 mtu 9300
     ERROR: Command not found
-      
+
     Did you mean one of the following?
         net add interface <interface> mtu <552-9216>
 
@@ -111,7 +111,7 @@ NCLU has a comprehensive built in help system. In addition to the net man page, 
 ::
 
     cumulus@switch:~$ net help
-     
+
     Usage:
         # net <COMMAND> [<ARGS>] [help]
         #
@@ -121,8 +121,8 @@ NCLU has a comprehensive built in help system. In addition to the net man page, 
         # be explored by typing "<TAB>" or "help" anytime while using net.
         #
         # Use 'man net' for a more comprehensive overview.
-     
-     
+
+
         net abort
         net commit [verbose] [confirm] [description <wildcard>]
         net commit delete (<number>|<number-range>)
@@ -132,34 +132,34 @@ NCLU has a comprehensive built in help system. In addition to the net man page, 
         net show commit (history|<number>|<number-range>|last)
         net show rollback (<number>|last)
         net show configuration [commands|files|acl|bgp|ospf|ospf6|interface <interface>]
-     
-     
+
+
     Options:
-     
+
         # Help commands
         help     : context sensitive information; see section below
         example  : detailed examples of common workflows
-     
-     
+
+
         # Configuration commands
         add      : add/modify configuration
         del      : remove configuration
-     
-     
+
+
         # Commit buffer commands
         abort    : abandon changes in the commit buffer
         commit   : apply the commit buffer to the system
         pending  : show changes staged in the commit buffer
         rollback : revert to a previous configuration state
-     
-     
+
+
         # Status commands
         show     : show command output
         clear    : clear counters, BGP neighbors, etc
-     
+
     cumulus@switch:~$ net help bestpath
     The following commands contain keyword(s) 'bestpath'
-     
+
         net (add|del) bgp bestpath as-path multipath-relax [as-set|no-as-set]
         net (add|del) bgp bestpath compare-routerid
         net (add|del) bgp bestpath med missing-as-worst
@@ -172,13 +172,13 @@ NCLU has a comprehensive built in help system. In addition to the net man page, 
         net show bgp (<ipv6>|<ipv6/prefixlen>) [bestpath|multipath] [json]
         net show bgp vrf <text> (<ipv4>|<ipv4/prefixlen>) [bestpath|multipath] [json]
 
-     
+
 [plugin:content-inject](../switchd/restart-switchd)
-     
+
 
 .. note::  You can configure multiple interfaces at once:
     ::
-       
+
      cumulus@switch:~$ net add int swp7-9,12,15-17,22 mtu 9216
 
 Add ? (Question Mark) Ability to NCLU
@@ -192,14 +192,14 @@ While tab completion is enabled by default, you can also configure NCLU to use t
 
 Uncomment the very last line in the ``.inputrc`` file so that the file changes from this:
 
-::  
+::
 
     # Uncomment to use ? as an alternative to
     # ?: complete
 
 to this:
 
-::  
+::
 
     # Uncomment to use ? as an alternative to
     # ?: complete
@@ -243,9 +243,9 @@ NCLU has a number of built in examples to guide users through basic configuratio
         mlag             :  Multi-Chassis Link Aggregation
         ospf             :  Open Shortest Path First (OSPFv2)
         vlan-interfaces  :  IP interfaces for VLANs
-     
+
     cumulus@switch:~$ net example bridge
-     
+
     Scenario
     ========
     We are configuring switch1 and would like to configure the following
@@ -265,7 +265,7 @@ NCLU has a number of built in examples to guide users through basic configuratio
           /    \
          /      \
      host-11   host-12
-     
+
     switch1 net commands
     ====================
     - enable vlans 10-20
@@ -285,7 +285,7 @@ NCLU has a number of built in examples to guide users through basic configuratio
     # Review and commit changes
     switch1# net pending
     switch1# net commit
-     
+
     Verification
     ============
     switch1# net show interface
@@ -297,8 +297,8 @@ Configure User Accounts
 You can configure user accounts in Cumulus Linux with read-only or edit
 permissions for NCLU:
 
--  You create user accounts with **read-only** permissions for NCLU by adding them to the *netshow* group. A user in the netshow group can run NCLU ``net show`` commands, such as ``net show interface`` or ``net show config``, and certain general Linux commands, such as ``ls``, ``cd`` or ``man``, but cannot run ``net add``, ``net del`` or ``net commit`` commands. 
--  You create user accounts with **edit** permissions for NCLU by adding them to the *netedit* group. A user in the netedit group can run NCLU configuration commands, such as ``net add``, ``net del`` or ``net commit`` in addition to NCLU ``net show`` commands. 
+-  You create user accounts with **read-only** permissions for NCLU by adding them to the *netshow* group. A user in the netshow group can run NCLU ``net show`` commands, such as ``net show interface`` or ``net show config``, and certain general Linux commands, such as ``ls``, ``cd`` or ``man``, but cannot run ``net add``, ``net del`` or ``net commit`` commands.
+-  You create user accounts with **edit** permissions for NCLU by adding them to the *netedit* group. A user in the netedit group can run NCLU configuration commands, such as ``net add``, ``net del`` or ``net commit`` in addition to NCLU ``net show`` commands.
 
 The examples below demonstrate how to add a new user account or modify an existing user account called *myuser*.
 
@@ -365,14 +365,14 @@ edit and show commands, add the user to the ``users_with_edit`` and
 ::
 
     cumulus@switch:~$ sudo nano /etc/netd.conf
-      
+
     # Control which users/groups are allowed to run 'add', 'del',
     # 'clear', 'net abort', 'net commit' and restart services
     # to apply those changes
     users_with_edit = root, cumulus, netoperator
     groups_with_edit = root, cumulus
-     
-     
+
+
     # Control which users/groups are allowed to run 'show' commands
     users_with_show = root, cumulus, netoperator
     groups_with_show = root, cumulus
@@ -380,8 +380,8 @@ edit and show commands, add the user to the ``users_with_edit`` and
 To configure a new user group to use NCLU, add that group to the
 ``groups_with_edit`` and ``groups_with_show`` lines in the file.
 
-!! Use caution giving edit permissions to groups. For example, don't
-give edit permissions to the *tacacs* group.
+.. note:: Use caution giving edit permissions to groups. For example, don't
+   give edit permissions to the *tacacs* group.
 
 Restart the netd Service
 ========================
@@ -421,7 +421,7 @@ configuration by running:
 Advanced Configuration
 ======================
 
-NCLU needs no initial configuration; it is ready to go in Cumulus Linux. However, if you need to modify its configuration, you must manually update the ``/etc/netd.conf`` file. You can configure this file to allow different permission levels for users to edit configurations and run ``show`` commands. It also contains a blacklist that hides less frequently used terms from the tabbed autocomplete. 
+NCLU needs no initial configuration; it is ready to go in Cumulus Linux. However, if you need to modify its configuration, you must manually update the ``/etc/netd.conf`` file. You can configure this file to allow different permission levels for users to edit configurations and run ``show`` commands. It also contains a blacklist that hides less frequently used terms from the tabbed autocomplete.
 
 +----------------------------+--------------------+----------------+
 | Configuration Variable     | Default Setting    | Description    |
