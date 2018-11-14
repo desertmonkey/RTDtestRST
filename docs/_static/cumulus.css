@@ -1,8 +1,17 @@
 
 
+body {
+    font-family: Helvetica,Sans-Serif;
+    color: #5f6a72;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Gotham A,Gotham B,Montserrat;
+    color: #36424A;
+}
 
 .highlight { 
-	background: #EAEDF2;
+    background: #EAEDF2;
 }
 
 pre {
