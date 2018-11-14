@@ -2,7 +2,7 @@
    sphinx-quickstart on Mon Oct 22 15:43:38 2018.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
-   
+
 *************
 RTD Test Docs
 *************
@@ -12,7 +12,7 @@ Welcome to RTD Test Project's documentation!
 
 .. toctree::
    :maxdepth: 2
-   
+
    quick-start-guide/index
    system-configuration/network-command-line-utility-nclu/index
    system-configuration/switchd/index
@@ -98,7 +98,7 @@ Hardware Compatibility List
 ===========================
 
 You can find the most up-to-date hardware compatibility list (HCL)
-`here <http://cumulusnetworks.com/hcl/>`__. Use the HCL to confirm that
+`here <https://cumulusnetworks.com/hcl/>`__. Use the HCL to confirm that
 your switch model is supported by Cumulus Networks. The HCL is updated
 regularly, listing products by port configuration, manufacturer, and SKU
 part number.
