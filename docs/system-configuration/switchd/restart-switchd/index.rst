@@ -11,8 +11,7 @@ you must restart ``switchd`` for the change to take effect:
     cumulus@switch:~$ sudo systemctl restart switchd.service
 
 .. note:: You do not have to restart the ``switchd`` service when you update a
-network interface configuration (that is, edit
-``/etc/network/interfaces``).
+   network interface configuration (that is, edit ``/etc/network/interfaces``).
 
 .. warning:: Restarting ``switchd`` causes all network ports to reset in addition
-to resetting the switch hardware configuration.
+   to resetting the switch hardware configuration.

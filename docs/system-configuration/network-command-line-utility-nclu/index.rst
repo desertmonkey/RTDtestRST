@@ -170,8 +170,6 @@ NCLU has a comprehensive built in help system. In addition to the ``net`` man pa
         net show bgp vrf <text> (<ipv4>|<ipv4/prefixlen>) [bestpath|multipath] [json]
 
 
-.. include:: ../switchd/restart-switchd/index.rst
-
 .. note::  You can configure multiple interfaces at once:
 
 ::
@@ -287,6 +285,8 @@ NCLU has a number of built in examples to guide users through basic configuratio
     ============
     switch1# net show interface
     switch1# net show bridge macs
+
+.. include:: ../switchd/restart-switchd/index.rst
 
 Configure User Accounts
 =======================
