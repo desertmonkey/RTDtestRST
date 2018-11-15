@@ -56,8 +56,7 @@ after any future reboots or applying configuration changes with
    cumulus@switch:~$ net pending
    cumulus@switch:~$ net commit
 
-These commands create the following configuration in the
-``/etc/network/interfaces`` file:
+These commands create the following configuration in the ``/etc/network/interfaces`` file:
 
 ::
 
