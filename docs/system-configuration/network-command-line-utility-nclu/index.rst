@@ -105,6 +105,8 @@ commands:
 
 NCLU has a comprehensive built in help system. In addition to the ``net`` man page, you can use ``?`` and ``help`` to display available commands:
 
+::
+
     cumulus@switch:~$ net help
 
     Usage:
@@ -168,10 +170,11 @@ NCLU has a comprehensive built in help system. In addition to the ``net`` man pa
         net show bgp vrf <text> (<ipv4>|<ipv4/prefixlen>) [bestpath|multipath] [json]
 
 
-.. include:: ../switchd/restart-switchd/index.rst)
-
+.. include:: ../switchd/restart-switchd/index.rst
 
 .. note::  You can configure multiple interfaces at once:
+
+::
 
      cumulus@switch:~$ net add int swp7-9,12,15-17,22 mtu 9216
 
@@ -371,8 +374,7 @@ edit and show commands, add the user to the ``users_with_edit`` and
     users_with_show = root, cumulus, netoperator
     groups_with_show = root, cumulus
 
-To configure a new user group to use NCLU, add that group to the
-``groups_with_edit`` and ``groups_with_show`` lines in the file.
+To configure a new user group to use NCLU, add that group to the ``groups_with_edit`` and ``groups_with_show`` lines in the file.
 
 .. note:: Use caution giving edit permissions to groups. For example, don't
    give edit permissions to the *tacacs* group.
