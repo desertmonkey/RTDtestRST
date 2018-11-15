@@ -1,6 +1,5 @@
-***************
 Restart switchd
-***************
+===============
 
 Whenever you modify any ``switchd`` hardware configuration file
 (typically changing any ``*.conf`` file that requires making a change to
