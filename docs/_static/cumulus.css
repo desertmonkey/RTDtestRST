@@ -2,13 +2,13 @@
 `@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800');`
 
 body {
-    font-family: 'Helvetica', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: #5f6a72;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
-    font-weight: light !important;
+    font-weight: 300 !important;
 }
 
 .highlight { 
