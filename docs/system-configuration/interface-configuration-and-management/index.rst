@@ -193,24 +193,25 @@ For this example, swp1 and swp2 below do not need an entry in the ``interfaces``
 file. The following stanzas defined in ``/etc/network/interfaces`` provide the
 exact same configuration:
 
-+-----------------------------------+-----------------------------------+
++-----------------------------------+--------------------------------------+
 | **With Child Interfaces Defined** | **Without Child Interfaces Defined** |
-| ::                                |                                   |
-|                                   | ::                                |
-|    auto swp1                      |                                   |
-|    iface swp1                     |    auto bridge                    |
-|                                   |    iface bridge                   |
-|    auto swp2                      |        bridge-vlan-aware yes      |
-|    iface swp2                     |        bridge-ports swp1 swp2     |
-|                                   |        bridge-vids 1-100          |
-|    auto bridge                    |        bridge-pvid 1              |
-|    iface bridge                   |        bridge-stp on              |
-|        bridge-vlan-aware yes      |                                   |
-|        bridge-ports swp1 swp2     |                                   |
-|        bridge-vids 1-100          |                                   |
-|        bridge-pvid 1              |                                   |
-|        bridge-stp on              |                                   |
-+-----------------------------------+-----------------------------------+
++-----------------------------------+--------------------------------------+
+| ::                                | ::                                   |
+|                                   |                                      |
+|    auto swp1                      |    auto bridge                       |
+|    iface swp1                     |    iface bridge                      |
+|                                   |        bridge-vlan-aware yes         |
+|    auto swp2                      |        bridge-ports swp1 swp2        |
+|    iface swp2                     |        bridge-vids 1-100             |
+|                                   |        bridge-pvid 1                 |
+|    auto bridge                    |        bridge-stp on                 |
+|    iface bridge                   |                                      |
+|        bridge-vlan-aware yes      |                                      |
+|        bridge-ports swp1 swp2     |                                      |
+|        bridge-vids 1-100          |                                      |
+|        bridge-pvid 1              |                                      |
+|        bridge-stp on              |                                      |
++-----------------------------------+--------------------------------------+
 
 Bridge in Traditional Mode - Example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -372,7 +373,7 @@ To print the dependency information of an interface in ``dot`` format:
 You can use ``dot`` to render the graph on an external system where
 ``dot`` is installed.
 
-.. image:: docs/images/interfaces.png
+.. image:: ../../images/interfaces.png
 
 To print the dependency information of the entire ``interfaces`` file:
 
@@ -380,7 +381,7 @@ To print the dependency information of the entire ``interfaces`` file:
 
    cumulus@switch:~$ sudo ifquery --print-dependency=dot -a >interfaces_all.dot
 
-.. image:: docs/images/interfaces_all.png
+.. image:: ../../images/interfaces_all.png
 
 Subinterfaces
 -------------
