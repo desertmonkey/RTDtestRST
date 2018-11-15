@@ -221,25 +221,25 @@ For this example, swp1.100 and swp2.100 below do not need an entry in
 the ``interfaces`` file. The following stanzas defined in
 ``/etc/network/interfaces`` provide the exact same configuration:
 
-+---------------------------------------+--------------------------------------+
-| **With Child Interfaces Defined**     | **Without Child Interfaces Defined** |
-+=======================================+======================================+
-|                                       |                                      |
-| ::                                    | ::                                   |
-|                                       |                                      |
-|    auto swp1.100                      |    auto br-100                       |                                  |
-|    iface swp1.100                     |    iface br-100
-|                                       |        address 10.0.12.2/24          |
-|    auto swp2.100                      |        address 2001:dad:beef::3/64   |
-|    iface swp2.100                     |        bridge-ports swp1.100 swp2.100|
-|                                       |        bridge-stp on                 |
-|    auto br-100                        |                                      |
-|    iface br-100                       |                                      |
-|        address 10.0.12.2/24           |                                      |
-|        address 2001:dad:beef::3/64    |                                      |
-|        bridge-ports swp1.100 swp2.100 |                                      |
-|        bridge-stp on                  |                                      |
-+---------------------------------------+--------------------------------------+
++---------------------------------------+---------------------------------------+
+| **With Child Interfaces Defined**     | **Without Child Interfaces Defined**  |
++=======================================+=======================================+
+|                                       |                                       |
+| ::                                    | ::                                    |
+|                                       |                                       |
+|    auto swp1.100                      |    auto br-100                        |                                  |
+|    iface swp1.100                     |    iface br-100                       |
+|                                       |        address 10.0.12.2/24           |
+|    auto swp2.100                      |        address 2001:dad:beef::3/64    |
+|    iface swp2.100                     |        bridge-ports swp1.100 swp2.100 |
+|                                       |        bridge-stp on                  |
+|    auto br-100                        |                                       |
+|    iface br-100                       |                                       |
+|        address 10.0.12.2/24           |                                       |
+|        address 2001:dad:beef::3/64    |                                       |
+|        bridge-ports swp1.100 swp2.100 |                                       |
+|        bridge-stp on                  |                                       |
++---------------------------------------+---------------------------------------+
 
 For more information on the bridge in traditional mode vs the bridge in VLAN-aware
 mode, please read
