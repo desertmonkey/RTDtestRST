@@ -17,6 +17,7 @@ Welcome to RTD Test Project's documentation!
    system-configuration/network-command-line-utility-nclu/index
    system-configuration/switchd/index
    system-configuration/setting-date-and-time/index
+   system-configuration/interface-configuration-and-management/index
 
 Cumulus Linux is the first full-featured Linux operating system for the
 networking industry. The `Debian
