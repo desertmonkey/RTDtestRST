@@ -24,9 +24,6 @@ and sub-modes. NCLU:
 
 The NCLU wrapper utility called ``net`` is capable of configuring layer 2 and layer 3 versions of the networking stack, installing ACLs and VXLANs, rolling back and deleting snapshots, as well as providing monitoring and troubleshooting functionality for these features. You can configure both the ``/etc/network/interfaces`` and ``/etc/frr/frr.conf`` files with ``net``, in addition to running show and clear commands related to ``ifupdown2`` and FRRouting.
 
-.. contents:: Contents
-   :depth: 2
-
 Install NCLU
 ============
 
@@ -40,7 +37,7 @@ package on your switch:
     cumulus@switch:~$ sudo -E apt-get install nclu
     cumulus@switch:~$ sudo -E apt-get upgrade
 
-.. note:: The ``nclu`` package installs a new bash completion script and displays the following message:
+.. note:: The ``nclu`` package installs a new bash completion script and displays the following message:
    ::
        Setting up nclu (1.0-cl3u3) ...
        To enable the newly installed bash completion for nclu in this shell, execute...
@@ -106,9 +103,7 @@ commands:
     Did you mean one of the following?
         net add interface <interface> mtu <552-9216>
 
-NCLU has a comprehensive built in help system. In addition to the net man page, you can use ``?`` and ``help`` to display available commands:
-
-::
+NCLU has a comprehensive built in help system. In addition to the ``net`` man page, you can use ``?`` and ``help`` to display available commands:
 
     cumulus@switch:~$ net help
 
@@ -173,11 +168,10 @@ NCLU has a comprehensive built in help system. In addition to the net man page, 
         net show bgp vrf <text> (<ipv4>|<ipv4/prefixlen>) [bestpath|multipath] [json]
 
 
-[plugin:content-inject](../switchd/restart-switchd)
+.. include:: ../switchd/restart-switchd/index.rst)
 
 
 .. note::  You can configure multiple interfaces at once:
-    ::
 
      cumulus@switch:~$ net add int swp7-9,12,15-17,22 mtu 9216
 
