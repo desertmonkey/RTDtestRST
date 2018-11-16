@@ -30,6 +30,8 @@ pre code {
     color: #515D68;
     background: inherit;
     font-size: 1rem;
+    border: none !important;
+    background: none !important;
 }
 
 .wy-side-nav-search {
