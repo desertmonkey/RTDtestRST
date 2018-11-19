@@ -13,8 +13,8 @@ You can use one of two methods to set the time zone on the switch:
 -  Edit the ``/etc/timezone`` file.
 -  Use the guided wizard.
 
-Edit the ``/etc/timezone`` File
--------------------------------
+Edit the /etc/timezone File
+---------------------------
 
 To see the current time zone time zone, list the contents of
 ``/etc/timezone``:

@@ -532,6 +532,6 @@ NCLU needs no initial configuration; it is ready to go in Cumulus Linux. However
 |                            | bridge-mcqv4src    |                |
 +----------------------------+--------------------+----------------+
 
-.. tip:: ``net`` provides an environment variable to set where the ``net``
+.. hint:: ``net`` provides an environment variable to set where the ``net``
    output is directed. To only use ``stdout``, set the ``NCLU_TAB_STDOUT``
    environment variable to *true*. The value is not case sensitive.

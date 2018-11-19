@@ -40,10 +40,10 @@ Cumulus Linux 3.7 contains a number of new platforms, features and
 improvements:
 
 -  New `platforms <https://cumulusnetworks.com/hcl>`__ include:
--  QCT QuantaMesh BMS T4048-IX8 (25G Trident 3)
--  QCT QuantaMesh BMS T7032-IX7 (100G Trident 3)
--  Dell S5248F-ON (25G Trident 3)
--  Penguin Arctica 4806xt (10G Trident 2+)
+   -  QCT QuantaMesh BMS T4048-IX8 (25G Trident 3)
+   -  QCT QuantaMesh BMS T7032-IX7 (100G Trident 3)
+   -  Dell S5248F-ON (25G Trident 3)
+   -  Penguin Arctica 4806xt (10G Trident 2+)
 -  `Line side
    loopback <https://docs.cumulusnetworks.com/display/DOCS/Facebook+Voyager+Optical+Interfaces#FacebookVoyagerOpticalInterfaces-lineSideLoopback>`__
    and `Terminal
@@ -58,26 +58,26 @@ improvements:
 -  `TACACS+ local fallback
    authentication <https://docs.cumulusnetworks.com/display/DOCS/TACACS+Plus#TACACSPlus-fallback-auth>`__
 -  EVPN enhancements
--  `Neighbor Discovery (ND) Extended
-   Community <https://docs.cumulusnetworks.com/display/DOCS/Ethernet+Virtual+Private+Network+-+EVPN#EthernetVirtualPrivateNetwork-EVPN-ND_extended_community>`__
-   support
--  `Extended
-   mobility <https://docs.cumulusnetworks.com/display/DOCS/Ethernet+Virtual+Private+Network+-+EVPN#EthernetVirtualPrivateNetwork-EVPN-MAC-mobility>`__
-   support
--  ECMP support for overlay networks on RIOT-capable Broadcom switches
+   -  `Neighbor Discovery (ND) Extended
+      Community <https://docs.cumulusnetworks.com/display/DOCS/Ethernet+Virtual+Private+Network+-+EVPN#EthernetVirtualPrivateNetwork-EVPN-ND_extended_community>`__
+      support
+   -  `Extended
+      mobility <https://docs.cumulusnetworks.com/display/DOCS/Ethernet+Virtual+Private+Network+-+EVPN#EthernetVirtualPrivateNetwork-EVPN-MAC-mobility>`__
+      support
+   -  ECMP support for overlay networks on RIOT-capable Broadcom switches
 -  New NCLU commands:
--  `Show the version of a
-   package <https://docs.cumulusnetworks.com/display/DOCS/Adding+and+Updating+Packages#AddingandUpdatingPackages-versionDisplay>`__
--  `Show the interface description
-   (alias) <https://docs.cumulusnetworks.com/display/DOCS/Interface+Configuration+and+Management#InterfaceConfigurationandManagement-show_alias>`__
-   for all interfaces on the switch
--  `Show which interfaces are in a
-   VRF <https://docs.cumulusnetworks.com/display/DOCS/Virtual+Routing+and+Forwarding+-+VRF#VirtualRoutingandForwarding-VRF-vrf-interfaces>`__
-   and the `VNIs for VRF
-   interfaces <https://docs.cumulusnetworks.com/display/DOCS/Virtual+Routing+and+Forwarding+-+VRF#VirtualRoutingandForwarding-VRF-vrf-interfaces>`__
--  `Change bond mode to IEEE
-   802.3ad <https://docs.cumulusnetworks.com/display/DOCS/Bonding+-+Link+Aggregation>`__
-   link aggregation mode
+   -  `Show the version of a
+      package <https://docs.cumulusnetworks.com/display/DOCS/Adding+and+Updating+Packages#AddingandUpdatingPackages-versionDisplay>`__
+   -  `Show the interface description
+      (alias) <https://docs.cumulusnetworks.com/display/DOCS/Interface+Configuration+and+Management#InterfaceConfigurationandManagement-show_alias>`__
+      for all interfaces on the switch
+   -  `Show which interfaces are in a
+      VRF <https://docs.cumulusnetworks.com/display/DOCS/Virtual+Routing+and+Forwarding+-+VRF#VirtualRoutingandForwarding-VRF-vrf-interfaces>`__
+      and the `VNIs for VRF
+      interfaces <https://docs.cumulusnetworks.com/display/DOCS/Virtual+Routing+and+Forwarding+-+VRF#VirtualRoutingandForwarding-VRF-vrf-interfaces>`__
+   -  `Change bond mode to IEEE
+      802.3ad <https://docs.cumulusnetworks.com/display/DOCS/Bonding+-+Link+Aggregation>`__
+      link aggregation mode
 
 For information on bug fixes and known issues present in this release,
 refer to the `product release
