@@ -1,4 +1,4 @@
-
+8
 `@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800');`
 
 body {
@@ -66,17 +66,35 @@ a {
 }
 
 .rst-content .note {
-    background-color: #ffc82e !important;
+    background-color: #ffedcc !important;
 }
 
 .rst-content .note .admonition-title {
-    background-color: #ffa12d !important;
+    background-color: #f0b37e !important;
 }
 
 .rst-content .tip {
-    background-color: #7CCC6C !important;
+    background-color: #e8f7e6 !important;
 }
 
 .rst-content .tip .admonition-title {
-    background-color: #00ad69 !important;
+    background-color: #36424a !important;
+/*    background-color: #84c578 !important; */
 }
+
+.rst-content .warning {
+    background-color: #fbeded !important;
+}
+
+.rst-content .warning .admonition-title {
+    background-color: #d58181 !important;
+}
+
+.rst-content .hint {
+    background-color: #e6f3fb !important;
+}
+
+.rst-content .hint .admonition-title {
+    background-color: #6bb1e0 !important;
+}
+
