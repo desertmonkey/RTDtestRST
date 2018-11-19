@@ -6,8 +6,7 @@ This quick start guide provides an end-to-end setup process for
 installing and running Cumulus Linux, as well as a collection of example
 commands for getting started after installation is complete.
 
-.. contents:: Contents
-   :depth: 2
+.. contents::
 
 Prerequisites
 =============
@@ -51,12 +50,12 @@ discovery:
    terminal. After the installation completes, the Cumulus Linux login
    prompt appears in the terminal window.
 
-.. note:: These steps describe a flexible unattended installation method. You do not need a console cable. A fresh install with ONIE using a local web server typically completes in less than ten minutes. You have more options for installing Cumulus Linux with ONIE. Read `Installing a New Cumulus Linux Image <https://docs.cumulusnetworks.com/display/DOCS/Installing+a+New+Cumulus+Linux+Image>`__ to install Cumulus Linux using ONIE in the following ways: 
+.. note:: These steps describe a flexible unattended installation method. You do not need a console cable. A fresh install with ONIE using a local web server typically completes in less than ten minutes. You have more options for installing Cumulus Linux with ONIE. Read `Installing a New Cumulus Linux Image <https://docs.cumulusnetworks.com/display/DOCS/Installing+a+New+Cumulus+Linux+Image>`__ to install Cumulus Linux using ONIE in the following ways:
 
-   - DHCP/web server with and without DHCP options 
-   - Web server without DHCP 
-   - FTP or TFTP without a web server 
-   - Local file 
+   - DHCP/web server with and without DHCP options
+   - Web server without DHCP
+   - FTP or TFTP without a web server
+   - Local file
    - USB
 
 ONIE supports many other discovery mechanisms using USB (copy the
@@ -72,7 +71,7 @@ After installing Cumulus Linux, you are ready to:
 -  Configure Cumulus Linux. This quick start guide provides instructions
    on configuring switch ports and a loopback interface.
 
-Upgrade to the Latest Version 
+Upgrade to the Latest Version
 -----------------------------
 
 If you are running a Cumulus Linux version earlier than 3.0.0, you must
@@ -216,13 +215,13 @@ hostname.
     cumulus@switch:~$ net pending
     cumulus@switch:~$ net commit
 
-..note:: The command prompt in the terminal does not reflect the new hostname
-  until you either log out of the switch or start a new shell.
-  
-  When you use this NCLU command to set the hostname, DHCP **does not**
-  override the hostname when you reboot the switch. However, if you
-  disable the hostname setting with NCLU, DHCP **does** override the
-  hostname the next time you reboot the switch.
+.. note:: The command prompt in the terminal does not reflect the new hostname
+   until you either log out of the switch or start a new shell.
+
+   When you use this NCLU command to set the hostname, DHCP **does not**
+   override the hostname when you reboot the switch. However, if you
+   disable the hostname setting with NCLU, DHCP **does** override the
+   hostname the next time you reboot the switch.
 
 To update the timezone, use the NTP interactive mode:
 
@@ -268,7 +267,9 @@ There are three ways to install the license onto the switch:
    license and copy it to a server accessible from the switch. On the
    switch, use the following command to transfer the file directly on
    the switch, then install the license file:
-   ``cumulus@switch:~$ scp user@my_server:/home/user/my_license_file.txt .   cumulus@switch:~$ sudo cl-license -i my_license_file.txt``
+   ::
+       cumulus@switch:~$ scp user@my_server:/home/user/my_license_file.txt .
+       cumulus@switch:~$ sudo cl-license -i my_license_file.txt
 -  Copy the file to an HTTP server (not HTTPS), then reference the URL
    when you run ``cl-license``:
    ``cumulus@switch:~$ sudo cl-license -i <URL>``
@@ -278,11 +279,11 @@ There are three ways to install the license onto the switch:
 .. note:: It is not necessary to reboot the switch to activate the switch ports.
    After you install the license, restart the ``switchd`` service. All
    front panel ports become active and show up as swp1, swp2, and so on.
-   :: 
+   ::
 
       cumulus@switch:~$ sudo systemctl restart switchd.service
-      
-    If a license is not installed on a Cumulus Linux switch, the ``switchd`` 
+
+    If a license is not installed on a Cumulus Linux switch, the ``switchd``
     service does not start. After you install the license, start
     ``switchd`` as described above.
 
@@ -361,28 +362,28 @@ bridge, use the following examples as guides.
 Examples
 ~~~~~~~~
 
-**Example One** 
+**Example One**
 
-In the following configuration example, the front panel port swp1 is placed 
-into a bridge called *bridge*. The NCLU commands are: 
+In the following configuration example, the front panel port swp1 is placed
+into a bridge called *bridge*. The NCLU commands are:
 
 ::
 
-    cumulus@switch:~$ net add bridge bridge ports swp1 
-    cumulus@switch:~$ net pending !!! cumulus@switch:~$ net commit 
+    cumulus@switch:~$ net add bridge bridge ports swp1
+    cumulus@switch:~$ net pending !!! cumulus@switch:~$ net commit
 
-The commands above produce the following ``/etc/network/interfaces``snippet: 
+The commands above produce the following ``/etc/network/interfaces``snippet:
 
 ::
 
     auto bridge
     iface bridge
         bridge-ports swp1
-        bridge-vlan-aware yes 
+        bridge-vlan-aware yes
 
 **Example Two**
 
-You can add a range of ports in one command. For example, add swp1 through 
+You can add a range of ports in one command. For example, add swp1 through
 swp10, swp12, and swp14 through swp20 to bridge:
 
 ::
@@ -390,15 +391,15 @@ swp10, swp12, and swp14 through swp20 to bridge:
     cumulus@switch:~$ net add bridge bridge ports swp1-10,12,14-20
     cumulus@switch:~$ net pending
     cumulus@switch:~$ net commit
-    
-The commands above produce the following snippet in the 
+
+The commands above produce the following snippet in the
 ``/etc/network/interfaces`` file:
 
-:: 
+::
 
     auto bridge
     iface bridge
-         bridge-ports swp1 swp2 swp3 swp4 swp5 swp6 swp7 swp8 swp9 swp10 swp12 swp14 swp15 swp16 swp17 swp18 swp19 swp20 
+         bridge-ports swp1 swp2 swp3 swp4 swp5 swp6 swp7 swp8 swp9 swp10 swp12 swp14 swp15 swp16 swp17 swp18 swp19 swp20
          bridge-vlan-aware yes
 
 To view the changes in the kernel, use the ``brctl`` command:
@@ -452,7 +453,7 @@ The commands above produce the following snippet in the
     iface bridge
         bridge-vids 100
         bridge-vlan-aware yes
-        
+
     auto vlan100
     iface vlan100
         address 192.168.10.1/24
@@ -473,8 +474,8 @@ To view the changes in the kernel, use the ``ip addr show`` command:
 
     14: bridge: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default
         link/ether 44:38:39:00:00:04 brd ff:ff:ff:ff:ff:ff
-        inet6 fe80::4638:39ff:fe00:4/64 scope link 
-          valid_lft forever preferred_lft forever    
+        inet6 fe80::4638:39ff:fe00:4/64 scope link
+          valid_lft forever preferred_lft forever
     ...
 
 Configure a Loopback Interface
