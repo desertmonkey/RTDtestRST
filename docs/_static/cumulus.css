@@ -26,7 +26,7 @@ pre {
     font-size: 1rem;
 }
 
-pre code {
+code {
     color: #515D68;
     font-size: 1rem;
     border: none !important;
