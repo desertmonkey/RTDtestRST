@@ -78,8 +78,7 @@ a {
 }
 
 .rst-content .tip .admonition-title {
-    background-color: #36424a !important;
-/*    background-color: #84c578 !important; */
+    background-color: #84c578 !important;
 }
 
 .rst-content .warning {
