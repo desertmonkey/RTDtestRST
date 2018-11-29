@@ -9,9 +9,6 @@ on Cumulus Linux.
 The ``switchd`` configuration is stored in
 ``/etc/cumulus/switchd.conf``.
 
-.. contents:: Contents
-   :depth: 2
-   
 The switchd File System
 =======================
 
