@@ -245,55 +245,6 @@ For more information on the bridge in traditional mode vs the bridge in VLAN-awa
 mode, please read
 `this knowledge base article <https://support.cumulusnetworks.com/hc/en-us/articles/204909397>`_.
 
-
-.. raw:: html
-
-<table style="width: 1197px;" border="0">
-<tbody>
-<tr>
-<td style="width: 192px;"><strong>Release Note ID</strong></td>
-<td style="width: 167.8125px;"><strong>Summary</strong></td>
-<td style="width: 622.1875px;"><strong>Description</strong></td>
-</tr>
-<tr>
-<td style="white-space: nowrap; width: 192px;"><a name="RN1130"></a><a href="#RN1130"> <img src="https://theme.zdassets.com/theme_assets/257925/59be21c5912389f67290d58a9cf0a6e745b50226.svg" alt="" width="32" /> </a> <br />RN-1130 (CM-22618)</td>
-<td style="font-size: small; width: 167.8125px;">On Cumulus RMP, multiple failed ACL installations result in an `out of table resource` message even after reverting to a good rule set</td>
-<td style="font-size: small; width: 622.1875px;">
-<p>After attempting to install unsupported ICMPv6-type rules, the hardware sync fails with an <code>Out of table resource</code> message even after you correct the rules.</p>
-<p>This is a known issue that is currently being investigated.</p>
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; width: 192px;"><a name="RN1133"></a><a href="#RN1133"> <img src="https://theme.zdassets.com/theme_assets/257925/59be21c5912389f67290d58a9cf0a6e745b50226.svg" alt="" width="32" /> </a> <br />RN-1133 (CM-22590)</td>
-<td style="font-size: small; width: 167.8125px;">NCLU `net show configuration commands` does not show output for an IPv6 rsyslog host</td>
-<td style="font-size: small; width: 622.1875px;">
-<p>NCLU <code>net show configuration commands</code> does not display any output for IPv6 rsyslog hosts.</p>
-<p>This is a known issue that is currently being investigated.</p>
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; width: 192px;"><a name="RN1134"></a><a href="#RN1134"> <img src="https://theme.zdassets.com/theme_assets/257925/59be21c5912389f67290d58a9cf0a6e745b50226.svg" alt="" width="32" /> </a> <br />RN-1134 (CM-22589)</td>
-<td style="font-size: small; width: 167.8125px;">NCLU `net show configuration commands` displays a syslog command with invalid syntax</td>
-<td style="font-size: small; width: 622.1875px;">
-<p>NCLU <code>net show configuration commands</code> displays a <code>net add syslog</code> command with invalid syntax. For example, if you run the following commands:</p>
-<pre>cumulus@switch:~$ net add syslog host ipv4 10.0.0.1 port udp 514
-cumulus@switch:~$ net commit
-</pre>
-<p>then run <code>net show configuration commands</code>, the output of the command syntax is invalid.</p>
-<p>This is a known issue that is currently being investigated.</p>
-</td>
-</tr>
-<tr>
-<td style="white-space: nowrap; width: 192px;"><a name="RN1136"></a><a href="#RN1136"> <img src="https://theme.zdassets.com/theme_assets/257925/59be21c5912389f67290d58a9cf0a6e745b50226.svg" alt="" width="32" /> </a> <br />RN-1136 (CM-22554)</td>
-<td style="font-size: small; width: 167.8125px;">The link state of a bond is not updated when several members are brought down remotely at once</td>
-<td style="font-size: small; width: 622.1875px;">
-<p>If you try to bring down several members of a bond remotely at the same time, the link state of one of the interfaces does not correctly transition to the down state; however, all links show down in hardware.</p>
-<p>This is a known issue that is currently being investigated.</p>
-</td>
-</tr>
-</tbody>
-</table>
-
 ifupdown2 Interface Dependencies
 --------------------------------
 

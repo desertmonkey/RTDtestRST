@@ -10,15 +10,6 @@ RTD Test Docs
 Welcome to RTD Test Project's documentation!
 ============================================
 
-.. toctree::
-   :maxdepth: 2
-
-   quick-start-guide/index
-   system-configuration/network-command-line-utility-nclu/index
-   system-configuration/switchd/index
-   system-configuration/setting-date-and-time/index
-   system-configuration/interface-configuration-and-management/index
-
 Cumulus Linux is the first full-featured Linux operating system for the
 networking industry. The `Debian
 Jessie <https://www.debian.org/releases/jessie/>`__-based,
@@ -134,3 +125,15 @@ previous versions, in PDF format:
    Guide <https://docs.cumulusnetworks.com/download/attachments/8362527/Cumulus%20Linux%203.1.2%20User%20Guide.pdf?version=1&modificationDate=1537401092000&api=v2>`__
 -  `Cumulus Linux 3.0.1 User
    Guide <https://docs.cumulusnetworks.com/download/attachments/8362527/Cumulus%20Linux%203.0.1%20User%20Guide.pdf?version=1&modificationDate=1537401092000&api=v2>`__
+
+Contents
+========
+
+   .. toctree::
+      :maxdepth: 2
+
+      quick-start-guide/index
+      system-configuration/network-command-line-utility-nclu/index
+      system-configuration/switchd/index
+      system-configuration/setting-date-and-time/index
+      system-configuration/interface-configuration-and-management/index
