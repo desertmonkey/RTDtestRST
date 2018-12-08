@@ -49,9 +49,7 @@ improvements:
 -  `TACACS+ local fallback
    authentication <https://docs.cumulusnetworks.com/display/DOCS/TACACS+Plus#TACACSPlus-fallback-auth>`__
 -  EVPN enhancements
-   -  `Neighbor Discovery (ND) Extended
-      Community <https://docs.cumulusnetworks.com/display/DOCS/Ethernet+Virtual+Private+Network+-+EVPN#EthernetVirtualPrivateNetwork-EVPN-ND_extended_community>`__
-      support
+   -  `Neighbor Discovery (ND) Extended Community <https://docs.cumulusnetworks.com/display/DOCS/Ethernet+Virtual+Private+Network+-+EVPN#EthernetVirtualPrivateNetwork-EVPN-ND_extended_community>`__ support
    -  `Extended
       mobility <https://docs.cumulusnetworks.com/display/DOCS/Ethernet+Virtual+Private+Network+-+EVPN#EthernetVirtualPrivateNetwork-EVPN-MAC-mobility>`__
       support
