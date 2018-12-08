@@ -1,9 +1,3 @@
----
-title: "Quick Start Guide MD"
-date: 2018-11-08T10:54:54-08:00
-draft: true
-weight: 1
----
 
 This quick start guide provides an end-to-end setup process for installing and running Cumulus Linux, as well as a collection of example commands for getting started after installation is complete.
 
@@ -64,7 +58,7 @@ When starting Cumulus Linux for the first time, the management port makes a DHCP
 
 The default installation includes one system account, *root*, with full system privileges, and one user account, *cumulus*, with `sudo` privileges. The *root* account password is set to null by default (which prohibits login), while the *cumulus* account is configured with this default password:
 
-``` 
+```
 CumulusLinux!
 ```
 
@@ -134,7 +128,7 @@ cumulus@switch:~$ net pending
 cumulus@switch:~$ net commit
 ```
 
-{{%notice note %}} 
+{{%notice note %}}
 The command prompt in the terminal does not reflect the new hostname until you either log out of the switch or start a new shell.
 
 When you use this NCLU command to set the hostname, DHCP **does not** override the hostname when you reboot the switch. However, if you disable the hostname setting with NCLU, DHCP **does** override the hostname the next time you reboot the switch.
@@ -146,7 +140,7 @@ To update the timezone, use the NTP interactive mode:
    `sudo dpkg-reconfigure tzdata`
 2. Follow the on screen menu options to select the geographic area and region.
 
-{{%notice note %}} 
+{{%notice note %}}
 Programs that are already running (including log files) and users currently logged in, do not see timezone changes made with interactive mode. To have the timezone set for all services and daemons, a reboot is required.
 {{% /notice %}}
 
@@ -230,7 +224,7 @@ cumulus@switch:~$ net commit
 </tbody>
 </table>
 
-{{%notice note %}} 
+{{%notice note %}}
 It is not necessary to reboot the switch to activate the switch ports. After you install the license, restart the `switchd` service. All front panel ports become active and show up as swp1, swp2, and so on.
 
 If a license is not installed on a Cumulus Linux switch, the `switchd` service does not start. After you install the license, start `switchd` as described above.
@@ -294,7 +288,7 @@ ADMDN  vagrant                   0M       1500   NotConfigured
 
 ### Layer 2 Port Configuration
 
-Cumulus Linux does not put all ports into a bridge by default. To create a bridge and configure one or more front panel ports as members of the bridge, use the following examples as guides. 
+Cumulus Linux does not put all ports into a bridge by default. To create a bridge and configure one or more front panel ports as members of the bridge, use the following examples as guides.
 
 #### Examples
 
@@ -327,7 +321,7 @@ cumulus@switch:~$ net commit
 ```
 
 The commands above produce the following snippet in the `/etc/network/interfaces` file:
- 
+
 ```
 auto bridge
 iface bridge
@@ -380,7 +374,7 @@ auto bridge
 iface bridge
     bridge-vids 100
     bridge-vlan-aware yes
-    
+
 auto vlan100
 iface vlan100
     address 192.168.10.1/24
@@ -401,7 +395,7 @@ cumulus@switch:~$ ip addr show
 
 14: bridge: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default
     link/ether 44:38:39:00:00:04 brd ff:ff:ff:ff:ff:ff
-    inet6 fe80::4638:39ff:fe00:4/64 scope link 
+    inet6 fe80::4638:39ff:fe00:4/64 scope link
       valid_lft forever preferred_lft forever    
 ...
 
@@ -411,7 +405,7 @@ cumulus@switch:~$ ip addr show
 
 Cumulus Linux has a loopback preconfigured in the `/etc/network/interfaces` file. When the switch boots up, it has a loopback interface, called *lo*, which is up and assigned an IP address of 127.0.0.1.
 
-{{%notice tip %}} 
+{{%notice tip %}}
 The loopback interface *lo* must always be specified in the `/etc/network/interfaces` file and must always be up.
 {{% /notice %}}
 
