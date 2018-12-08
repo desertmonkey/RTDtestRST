@@ -1,3 +1,4 @@
+# Quick Start Guide MD
 
 This quick start guide provides an end-to-end setup process for installing and running Cumulus Linux, as well as a collection of example commands for getting started after installation is complete.
 
@@ -7,14 +8,15 @@ This quick start guide provides an end-to-end setup process for installing and r
 - Intermediate-level Linux knowledge is assumed for this guide. You should be familiar with basic text editing, Unix file permissions, and process monitoring. A variety of text editors are pre-installed, including `vi` and `nano`.
 - You must have access to a Linux or UNIX shell. If you are running Windows, use a Linux environment like [Cygwin](http://www.cygwin.com/) as your command line tool for interacting with Cumulus Linux.
 
-``` tip:: If you are a networking engineer but are unfamiliar with Linux concepts, refer to [this reference guide](https://support.cumulusnetworks.com/hc/en-us/articles/201787636) to compare the Cumulus Linux CLI and configuration options, and their equivalent Cisco Nexus 3000 NX-OS commands and settings. You can also [watch a series of short videos](http://cumulusnetworks.com/technical-videos/) introducing you to Linux and Cumulus Linux-specific concepts.
+```eval_rst
+.. tip:: If you are a networking engineer but are unfamiliar with Linux concepts, refer to [this reference guide](https://support.cumulusnetworks.com/hc/en-us/articles/201787636) to compare the Cumulus Linux CLI and configuration options, and their equivalent Cisco Nexus 3000 NX-OS commands and settings. You can also [watch a series of short videos](http://cumulusnetworks.com/technical-videos/) introducing you to Linux and Cumulus Linux-specific concepts.
 ```
 
 ## Installation
 
 To install Cumulus Linux, you use [ONIE](https://github.com/opencomputeproject/onie/wiki) (Open  Network Install Environment), an extension to the traditional U-Boot software that allows for automatic discovery of a network installer image. This facilitates the ecosystem model of procuring switches, with a user's own choice of operating system loaded, such as Cumulus Linux.
 
-```{{% notice  ..note:: If Cumulus Linux 3.0.0 or later is already installed on your switch and you need to upgrade the software only, you can skip to [Upgrading Cumulus Linux](#upgrade) below.
+``` note:: If Cumulus Linux 3.0.0 or later is already installed on your switch and you need to upgrade the software only, you can skip to [Upgrading Cumulus Linux](#upgrade) below.
 ```
 
 The easiest way to install Cumulus Linux with ONIE is with local HTTP discovery:
