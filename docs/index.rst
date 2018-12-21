@@ -120,9 +120,6 @@ previous versions, in PDF format:
 -  `Cumulus Linux 3.0.1 User
    Guide <https://docs.cumulusnetworks.com/download/attachments/8362527/Cumulus%20Linux%203.0.1%20User%20Guide.pdf?version=1&modificationDate=1537401092000&api=v2>`__
 
-Contents
---------
-
 .. toctree::
    :maxdepth: 2
    :hidden:
@@ -136,6 +133,10 @@ Contents
    :caption: System Configuration
 
    system-configuration
+   nclu
+   interface-configuration-and-management
+   switchd
+   setting-date-and-time
 
 .. toctree::
    :maxdepth: 2
