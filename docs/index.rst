@@ -127,7 +127,7 @@ Contents
    :maxdepth: 2
    :caption: Quick Start Guide
 
-   quick-start-guide/index
+   quick-start-guide
 
 .. toctree::
    :maxdepth: 2
