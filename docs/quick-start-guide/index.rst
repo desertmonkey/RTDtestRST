@@ -20,7 +20,12 @@ Prerequisites
    `Cygwin <http://www.cygwin.com/>`__ as your command line tool for
    interacting with Cumulus Linux.
 
-.. tip:: If you are a networking engineer but are unfamiliar with Linux concepts, refer to `this reference guide <https://support.cumulusnetworks.com/hc/en-us/articles/201787636>`__ to compare the Cumulus Linux CLI and configuration options, and their equivalent Cisco Nexus 3000 NX-OS commands and settings. You can also `watch a series of short videos <http://cumulusnetworks.com/technical-videos/>`__ introducing you to Linux and Cumulus Linux-specific concepts.
+.. tip:: If you are a networking engineer but are unfamiliar with Linux concepts,
+   refer to `this reference guide <https://support.cumulusnetworks.com/hc/en-us/articles/201787636>`__
+   to compare the Cumulus Linux CLI and configuration options, and their equivalent
+   Cisco Nexus 3000 NX-OS commands and settings. You can also
+   `watch a series of short videos <http://cumulusnetworks.com/technical-videos/>`__
+   introducing you to Linux and Cumulus Linux-specific concepts.
 
 Installation
 ============
@@ -32,7 +37,9 @@ that allows for automatic discovery of a network installer image. This
 facilitates the ecosystem model of procuring switches, with a user's own
 choice of operating system loaded, such as Cumulus Linux.
 
-.. note:: If Cumulus Linux 3.0.0 or later is already installed on your switch and you need to upgrade the software only, you can skip to `Upgrading Cumulus Linux <#upgrade>`__ below.
+.. note:: If Cumulus Linux 3.0.0 or later is already installed on your switch
+   and you need to upgrade the software only, you can skip to
+   `Upgrading Cumulus Linux <#upgrade>`__ below.
 
 The easiest way to install Cumulus Linux with ONIE is with local HTTP
 discovery:
@@ -50,7 +57,12 @@ discovery:
    terminal. After the installation completes, the Cumulus Linux login
    prompt appears in the terminal window.
 
-.. note:: These steps describe a flexible unattended installation method. You do not need a console cable. A fresh install with ONIE using a local web server typically completes in less than ten minutes. You have more options for installing Cumulus Linux with ONIE. Read `Installing a New Cumulus Linux Image <https://docs.cumulusnetworks.com/display/DOCS/Installing+a+New+Cumulus+Linux+Image>`__ to install Cumulus Linux using ONIE in the following ways:
+.. note:: These steps describe a flexible unattended installation method. You do
+   not need a console cable. A fresh install with ONIE using a local web server
+   typically completes in less than ten minutes. You have more options for
+   installing Cumulus Linux with ONIE.
+   Read `Installing a New Cumulus Linux Image <https://docs.cumulusnetworks.com/display/DOCS/Installing+a+New+Cumulus+Linux+Image>`__
+   to install Cumulus Linux using ONIE in the following ways:
 
    - DHCP/web server with and without DHCP options
    - Web server without DHCP
@@ -107,21 +119,21 @@ default password:
 In this quick start guide, you use the *cumulus* account to configure
 Cumulus Linux.
 
-.. warning:: For optimum security, change the default password (using the ``passwd`` command) before you configure Cumulus Linux on the switch.
+.. warning:: For optimum security, change the default password (using the
+   ``passwd`` command) before you configure Cumulus Linux on the switch.
 
 All accounts except ``root`` are permitted remote SSH login; you can use
 ``sudo`` to grant a non-root account root-level access. Commands that
 change the system configuration require this elevated level of access.
 
-For more information about ``sudo``, read `Using sudo to Delegate
-Privileges <https://docs.cumulusnetworks.com/display/DOCS/Using+sudo+to+Delegate+Privileges>`__.
+For more information about ``sudo``, read
+`Using sudo to Delegate Privileges <https://docs.cumulusnetworks.com/display/DOCS/Using+sudo+to+Delegate+Privileges>`__.
 
 Serial Console Management
 -------------------------
 
-You are encouraged to perform management and configuration over the
-network, `either in band or out of
-band <https://docs.cumulusnetworks.com/display/DOCS/Upgrading+Cumulus+Linux#UpgradingCumulusLinux-outofband>`__.
+You are encouraged to perform management and configuration over the network,
+`either in band or out of band <https://docs.cumulusnetworks.com/display/DOCS/Upgrading+Cumulus+Linux#UpgradingCumulusLinux-outofband>`__.
 Use of the serial console is fully supported; however, many customers
 prefer the convenience of network-based management.
 
@@ -161,8 +173,7 @@ file:
         address 192.0.2.42/24
         gateway 192.0.2.1
 
-[ui-tabs position="top-left" active="0" theme="default"][ui-tab
-title="NCLU"]
+**[ui-tab title="NCLU"]**
 
 Set the static IP address with the ``interface address`` and
 ``interface gateway`` NCLU commands:
@@ -200,7 +211,7 @@ file and add the following configuration:
         address 192.0.2.42/24
         gateway 192.0.2.1
 
-[/ui-tab][/ui-tabs]
+**[/ui-tab]**
 
 Configuring the Hostname and Timezone
 -------------------------------------
@@ -226,18 +237,21 @@ hostname.
 To update the timezone, use the NTP interactive mode:
 
 1. Run the following command in a terminal:
+
    ``sudo dpkg-reconfigure tzdata``
 2. Follow the on screen menu options to select the geographic area and
    region.
 
-.. note:: Programs that are already running (including log files) and users currently logged in, do not see timezone changes made with interactive mode. To have the timezone set for all services and daemons, a reboot is required.
+.. note:: Programs that are already running (including log files) and users
+   currently logged in, do not see timezone changes made with interactive mode.
+   To have the timezone set for all services and daemons, a reboot is required.
 
 Verifying the System Time
 -------------------------
 
 Before you install the license, verify that the date and time on the
-switch are correct. You must `correct the date and
-time <https://docs.cumulusnetworks.com/display/DOCS/Setting+Date+and+Time>`__
+switch are correct. You must
+`correct the date and time <https://docs.cumulusnetworks.com/display/DOCS/Setting+Date+and+Time>`__
 if they are incorrect. The wrong date and time can have impacts on the
 switch, such as the inability to synchronize with Puppet or return
 errors like this one after you restart ``switchd``:

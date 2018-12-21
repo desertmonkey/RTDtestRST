@@ -31,6 +31,7 @@ Cumulus Linux 3.7 contains a number of new platforms, features and
 improvements:
 
 -  New `platforms <https://cumulusnetworks.com/hcl>`__ include:
+
    -  QCT QuantaMesh BMS T4048-IX8 (25G Trident 3)
    -  QCT QuantaMesh BMS T7032-IX7 (100G Trident 3)
    -  Dell S5248F-ON (25G Trident 3)
@@ -49,14 +50,13 @@ improvements:
 -  `TACACS+ local fallback
    authentication <https://docs.cumulusnetworks.com/display/DOCS/TACACS+Plus#TACACSPlus-fallback-auth>`__
 -  EVPN enhancements
+
    -  `Neighbor Discovery (ND) Extended Community <https://docs.cumulusnetworks.com/display/DOCS/Ethernet+Virtual+Private+Network+-+EVPN#EthernetVirtualPrivateNetwork-EVPN-ND_extended_community>`__ support
-   -  `Extended
-      mobility <https://docs.cumulusnetworks.com/display/DOCS/Ethernet+Virtual+Private+Network+-+EVPN#EthernetVirtualPrivateNetwork-EVPN-MAC-mobility>`__
+   -  `Extended mobility <https://docs.cumulusnetworks.com/display/DOCS/Ethernet+Virtual+Private+Network+-+EVPN#EthernetVirtualPrivateNetwork-EVPN-MAC-mobility>`__
       support
    -  ECMP support for overlay networks on RIOT-capable Broadcom switches
 -  New NCLU commands:
-   -  `Show the version of a
-      package <https://docs.cumulusnetworks.com/display/DOCS/Adding+and+Updating+Packages#AddingandUpdatingPackages-versionDisplay>`__
+   -  `Show the version of a package <https://docs.cumulusnetworks.com/display/DOCS/Adding+and+Updating+Packages#AddingandUpdatingPackages-versionDisplay>`__
    -  `Show the interface description
       (alias) <https://docs.cumulusnetworks.com/display/DOCS/Interface+Configuration+and+Management#InterfaceConfigurationandManagement-show_alias>`__
       for all interfaces on the switch
