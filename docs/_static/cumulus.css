@@ -11,9 +11,11 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 200 !important;
 }
 
-h2, .rst-content .toctree-wrapper p.caption {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 200;
+/* h2, .rst-content .toctree-wrapper p.caption */
+
+caption {
+    font-family: 'Montserrat', sans-serif !important; 
+    font-weight: 200 !important;
 }
 
 .highlight { 

@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to RTD Test Project's documentation!
+Welcome to RTD Test Project's Documentation!
 ============================================
 
 Cumulus Linux is the first full-featured Linux operating system for the
