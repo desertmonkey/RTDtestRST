@@ -56,9 +56,9 @@ improvements:
       support
    -  ECMP support for overlay networks on RIOT-capable Broadcom switches
 -  New NCLU commands:
+
    -  `Show the version of a package <https://docs.cumulusnetworks.com/display/DOCS/Adding+and+Updating+Packages#AddingandUpdatingPackages-versionDisplay>`__
-   -  `Show the interface description
-      (alias) <https://docs.cumulusnetworks.com/display/DOCS/Interface+Configuration+and+Management#InterfaceConfigurationandManagement-show_alias>`__
+   -  `Show the interface description (alias) <https://docs.cumulusnetworks.com/display/DOCS/Interface+Configuration+and+Management#InterfaceConfigurationandManagement-show_alias>`__
       for all interfaces on the switch
    -  `Show which interfaces are in a
       VRF <https://docs.cumulusnetworks.com/display/DOCS/Virtual+Routing+and+Forwarding+-+VRF#VirtualRoutingandForwarding-VRF-vrf-interfaces>`__
