@@ -133,6 +133,7 @@ Contents
    :maxdepth: 2
    :caption: System Configuration
 
+   system-configuration
    system-configuration/network-command-line-utility-nclu/index
    system-configuration/switchd/index
    system-configuration/setting-date-and-time/index
