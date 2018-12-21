@@ -125,18 +125,21 @@ Contents
 
 .. toctree::
    :maxdepth: 2
+   :hidden:
    :caption: Quick Start Guide
 
    quick-start-guide
 
 .. toctree::
    :maxdepth: 2
+   :hidden:
    :caption: System Configuration
 
    system-configuration
-   
+
 .. toctree::
    :maxdepth: 2
+   :hidden:
    :caption: Markdown
 
    md/_index.md
