@@ -1,9 +1,4 @@
 System Configuration
 ====================
 
-.. toctree::
-
-   nclu
-   switchd
-   setting-date-and-time
-   interface-configuration-and-management
+You won't want to put a toctree here.
