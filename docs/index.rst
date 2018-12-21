@@ -127,12 +127,23 @@ previous versions, in PDF format:
 Contents
 ========
 
-   .. toctree::
-      :maxdepth: 2
+.. toctree::
+   :maxdepth: 2
+   :caption: Quick Start Guide
 
-      quick-start-guide/index
-      system-configuration/network-command-line-utility-nclu/index
-      system-configuration/switchd/index
-      system-configuration/setting-date-and-time/index
-      system-configuration/interface-configuration-and-management/index
-      md/_index.md
+   quick-start-guide/index
+
+.. toctree::
+   :maxdepth: 2
+   :caption: System Configuration
+
+   system-configuration/network-command-line-utility-nclu/index
+   system-configuration/switchd/index
+   system-configuration/setting-date-and-time/index
+   system-configuration/interface-configuration-and-management/index
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Markdown
+
+   md/_index.md
