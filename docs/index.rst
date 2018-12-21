@@ -3,10 +3,6 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-*************
-RTD Test Docs
-*************
-
 Welcome to RTD Test Project's documentation!
 ============================================
 
@@ -25,7 +21,7 @@ addition, the quick start guide provides an end-to-end setup process to
 get you started.
 
 What's New in Cumulus Linux 3.7
-===============================
+-------------------------------
 
 Cumulus Linux 3.7 contains a number of new platforms, features and
 improvements:
@@ -73,7 +69,7 @@ refer to the `product release
 notes <https://support.cumulusnetworks.com/hc/en-us/articles/360007793174-Cumulus-Linux-3-7-Release-Notes>`__.
 
 Open Source Contributions
-=========================
+-------------------------
 
 To implement various Cumulus Linux features, Cumulus Networks has forked
 various software projects, like CFEngine, ``Netdev`` and some Puppet
@@ -85,7 +81,7 @@ open source. The list of open source projects is on the `open source
 software <http://oss.cumulusnetworks.com/>`__ page.
 
 Hardware Compatibility List
-===========================
+---------------------------
 
 You can find the most up-to-date hardware compatibility list (HCL)
 `here <https://cumulusnetworks.com/hcl/>`__. Use the HCL to confirm that
@@ -94,7 +90,7 @@ regularly, listing products by port configuration, manufacturer, and SKU
 part number.
 
 Download the User Guide
-=======================
+-----------------------
 
 You can download the current Cumulus Linux User Guide, as well as
 previous versions, in PDF format:
@@ -125,7 +121,7 @@ previous versions, in PDF format:
    Guide <https://docs.cumulusnetworks.com/download/attachments/8362527/Cumulus%20Linux%203.0.1%20User%20Guide.pdf?version=1&modificationDate=1537401092000&api=v2>`__
 
 Contents
-========
+--------
 
 .. toctree::
    :maxdepth: 2
