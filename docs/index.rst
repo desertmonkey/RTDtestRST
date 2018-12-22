@@ -9,21 +9,17 @@ Welcome to RTD Test Project's Documentation!
 
 .. toctree::
    :maxdepth: 2
-   :hidden:
-   :caption: Welcome
 
    intro
 
 .. toctree::
    :maxdepth: 2
-   :hidden:
    :caption: Quick Start Guide
 
    quick-start-guide
 
 .. toctree::
    :maxdepth: 2
-   :hidden:
    :caption: System Configuration
 
    nclu
@@ -33,7 +29,6 @@ Welcome to RTD Test Project's Documentation!
 
 .. toctree::
    :maxdepth: 2
-   :hidden:
    :caption: Markdown
 
    md/_index.md
