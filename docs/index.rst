@@ -29,8 +29,9 @@
 
    md/_index.md
 
+############################################
 Welcome to RTD Test Project's Documentation!
-============================================
+############################################
 
 Cumulus Linux is the first full-featured Linux operating system for the
 networking industry. The `Debian
@@ -47,7 +48,7 @@ addition, the quick start guide provides an end-to-end setup process to
 get you started.
 
 What's New in Cumulus Linux 3.7
--------------------------------
+===============================
 
 Cumulus Linux 3.7 contains a number of new platforms, features and
 improvements:
@@ -95,7 +96,7 @@ refer to the `product release
 notes <https://support.cumulusnetworks.com/hc/en-us/articles/360007793174-Cumulus-Linux-3-7-Release-Notes>`__.
 
 Open Source Contributions
--------------------------
+=========================
 
 To implement various Cumulus Linux features, Cumulus Networks has forked
 various software projects, like CFEngine, ``Netdev`` and some Puppet
@@ -107,7 +108,7 @@ open source. The list of open source projects is on the `open source
 software <http://oss.cumulusnetworks.com/>`__ page.
 
 Hardware Compatibility List
----------------------------
+===========================
 
 You can find the most up-to-date hardware compatibility list (HCL)
 `here <https://cumulusnetworks.com/hcl/>`__. Use the HCL to confirm that
@@ -116,7 +117,7 @@ regularly, listing products by port configuration, manufacturer, and SKU
 part number.
 
 Download the User Guide
------------------------
+=======================
 
 You can download the current Cumulus Linux User Guide, as well as
 previous versions, in PDF format:
