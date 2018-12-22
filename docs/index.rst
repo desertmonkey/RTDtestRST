@@ -26,7 +26,6 @@ Welcome to RTD Test Project's Documentation!
    :hidden:
    :caption: System Configuration
 
-   system-configuration
    nclu
    interface-configuration-and-management
    switchd
