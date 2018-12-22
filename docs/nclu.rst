@@ -21,7 +21,7 @@ and sub-modes. NCLU:
 -  Configures dependent features automatically so that you don’t have
    to.
 
-.. figure:: ../../images/Linux-NCLU-Architecture-2.png
+.. figure:: images/Linux-NCLU-Architecture-2.png
    :alt: NCLU overview
 
 The NCLU wrapper utility called ``net`` is capable of configuring layer 2 and layer 3 versions of the networking stack, installing ACLs and VXLANs, rolling back and deleting snapshots, as well as providing monitoring and troubleshooting functionality for these features. You can configure both the ``/etc/network/interfaces`` and ``/etc/frr/frr.conf`` files with ``net``, in addition to running show and clear commands related to ``ifupdown2`` and FRRouting.
