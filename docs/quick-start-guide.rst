@@ -6,8 +6,6 @@ This quick start guide provides an end-to-end setup process for
 installing and running Cumulus Linux, as well as a collection of example
 commands for getting started after installation is complete.
 
-.. contents::
-
 Prerequisites
 =============
 
